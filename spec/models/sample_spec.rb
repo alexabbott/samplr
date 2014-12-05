@@ -11,4 +11,7 @@ describe Sample do
 
 	it { should validate_presence_of(:category) }
 
+	#add test for belong_to association
+    it { should belong_to(:user) }
+
 end
