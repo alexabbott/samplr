@@ -1,31 +1,58 @@
+<script>
+
+<% @samples.each do |s| %>
+  function play<%= s.id %>(){
+       var audio<%= s.id %> = document.getElementById("<%= s.id %>");
+       audio<%= s.id %>.play();
+  }
+<% end %>
+
+function displayunicode(e){
+	var unicode=e.keyCode? e.keyCode : e.charCode
+	alert(unicode)
+};
+
+document.onkeypress=displayunicode();
+
+</script>
+
+<h2 class="title">Available Samples</h2>
+
 <% @samples.each do |s| %>
 
 	<div>
-		<%= s.name %><br>
-		<%= s.url %><br>
-		<%= s.category %><br>
+		<audio id="<%= s.id %>">
+		  <source src="<%= s.url %>" type="audio/wav">
+		</audio>
+
+		<div class="pad" onclick="play<%= s.id %>()">
+			<h3><%= s.category %><br></h3>
+			<h4><%= s.name %></h4>
+		</div>
 	</div>
 
 <% end %>
 
+<h2 class="title">Add a New Sample</h2>
+
 <%= form_for @sample do |f| %>
 
-<div class="field">
+<div class="field sample_name">
   <%= f.label :name %><br>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :placeholder => "Name of new audio sample", :size => 50 %>
 </div>
 
-<div class="field">
+<div class="field sample_url">
   <%= f.label :url %><br>
-  <%= f.text_field :url %>
+  <%= f.text_field :url, :placeholder => "URL of new audio sample", :size => 50 %>
 </div>
 
-<div class="field">
-  <%= f.label :category %><br>
-  <%= f.text_field :category %>
+<div class="field sample_category">
+	<%= f.label :category %><br>
+    <%= f.select :category, [['Choose a category...'],['clap'],['crash'],['fx'],['hi-hat'],['kick'],['laser'],['ride'],['snare'],['vocal'],['other...']] %>
 </div>
 
-<div class="actions">
+<div class="actions submit">
   <%= f.submit %>
 </div>
 <% end %>
