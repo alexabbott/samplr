@@ -1,6 +1,13 @@
 Samplr::Application.routes.draw do
 
-  root 'home#index'
+ root 'home#index', as: :home   
+
+ get 'samples/' => 'samples#index', as: :samples
+
+ #new route added in
+ get 'samples/' => 'samples#index', as: :sample
+
+ post 'samples/' => 'samples#create', as: :samples_create
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

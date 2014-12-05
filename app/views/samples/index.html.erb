@@ -1,0 +1,31 @@
+<% @samples.each do |s| %>
+
+	<div>
+		<%= s.name %><br>
+		<%= s.url %><br>
+		<%= s.category %><br>
+	</div>
+
+<% end %>
+
+<%= form_for @sample do |f| %>
+
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+
+<div class="field">
+  <%= f.label :url %><br>
+  <%= f.text_field :url %>
+</div>
+
+<div class="field">
+  <%= f.label :category %><br>
+  <%= f.text_field :category %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
