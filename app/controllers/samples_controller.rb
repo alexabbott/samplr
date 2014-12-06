@@ -3,8 +3,8 @@ class SamplesController < ApplicationController
 		@samples = Sample.all
 		@kicks = Sample.where(category: 'kick')
 		@snares = Sample.where(category: 'snare')
-		@hihatsclosed = Sample.where(category: 'hi-hat closed')
-		@hihatsopen = Sample.where(category: 'hi-hat open')
+		@hihatsclosed = Sample.where(category: 'hh closed')
+		@hihatsopen = Sample.where(category: 'hh open')
 		@claps = Sample.where(category: 'clap')
 		@cymbals = Sample.where(category: 'cymbal')
 		@fx = Sample.where(category: 'fx')
@@ -19,6 +19,6 @@ class SamplesController < ApplicationController
 	end
 
 	def sample_params
-		params.require(:sample).permit(:name, :url, :category)
+		params.require(:sample).permit(:name, :url, :category, :audiofile)
 	end
 end

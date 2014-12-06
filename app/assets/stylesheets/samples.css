@@ -20,13 +20,26 @@ body {
 	padding: 5px;
 	text-align: center;
 	font-weight: bold;
-	margin: 10px auto;
+	margin: 2px auto;
 	display: inline-block;
+	border-radius: 4px;
 }
 
 h4 {
 	font-size: 14px;
 	font-weight: normal;
+}
+
+.cross {
+	position: relative;
+	top: -32px;
+	font-weight: bold;
+	font-size: 64px;
+	transition: color 0.5s ease;
+}
+
+.cross:hover {
+	color: green;
 }
 
 .submit {
@@ -49,10 +62,39 @@ h4 {
 	display: inline-block;
 }
 
+.upload_field {
+	margin-left: 20px;
+	font-weight: bold;
+}
+
 #holder1 {
 	display: inline-block;
 }
 
 #holder2 {
+	display: inline-block;
+}
+
+#holder3 {
+	display: inline-block;
+}
+
+#holder4 {
+	display: inline-block;
+}
+
+#holder5 {
+	display: inline-block;
+}
+
+#holder6 {
+	display: inline-block;
+}
+
+#holder7 {
+	display: inline-block;
+}
+
+#holder8 {
 	display: inline-block;
 }

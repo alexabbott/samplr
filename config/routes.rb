@@ -1,6 +1,6 @@
 Samplr::Application.routes.draw do
 
- root 'home#index', as: :home   
+ root 'samples#index'   
 
  get 'samples/' => 'samples#index', as: :samples
 

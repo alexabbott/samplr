@@ -1,0 +1,33 @@
+<!-- this section allows users to add new samples -->
+
+<h2 class="title">Add a New Sample</h2>
+
+<%= form_for @sample do |f| %>
+
+<div class="field sample_name">
+  Sample <%= f.label :name %><br>
+  <%= f.text_field :name, :placeholder => "Name of new audio sample", :size => 50 %>
+</div>
+<br>
+<div class="field">
+	Upload a Sample<br>
+	<%= f.file_field :audiofile, :class => "upload_field" %>
+</div>
+
+<!-- 
+OR
+
+<div class="field sample_url">
+  Enter a Sample <%= f.label :url %><br>
+  <%= f.text_field :url, :placeholder => "URL of new audio sample", :size => 50 %>
+</div> -->
+
+<div class="field sample_category">
+	<%= f.label :category %><br>
+    <%= f.select :category, [['Choose a category...'],['kick'],['snare'],['clap'],['hh closed'],['hh open'],['cymbal'],['fx'],['vocal']] %>
+</div>
+
+<div class="actions submit">
+  <%= f.submit %>
+</div>
+<% end %>

@@ -9,6 +9,12 @@ gem 'pg'
 #Add factory girl
 gem 'factory_girl_rails'
 
+# user paperclip to upload new samples
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+# allows paperclip uploads to be saved to dropbox
+gem "paperclip-dropbox", ">= 1.1.7"
+
 group :production do
 
 	#gem for heroku to handle assets 
