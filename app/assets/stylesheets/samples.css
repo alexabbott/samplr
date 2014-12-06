@@ -12,14 +12,16 @@ body {
 }
 
 .pad {
+	color: lightgray;
 	width: 100px;
 	height: 100px;
-	background-color: lime;
-	border: 2px solid green;
+	background-color: #000;
+	box-shadow: 0px 0px 15px ;
 	padding: 5px;
 	text-align: center;
 	font-weight: bold;
-	margin: 0 auto;
+	margin: 10px auto;
+	display: inline-block;
 }
 
 h4 {
@@ -41,4 +43,16 @@ h4 {
 
 .sample_category {
 	margin-top: 20px;
+}
+
+.sample_repo {
+	display: inline-block;
+}
+
+#holder1 {
+	display: inline-block;
+}
+
+#holder2 {
+	display: inline-block;
 }
