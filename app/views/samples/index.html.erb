@@ -106,7 +106,7 @@ $(document).keyup(function() {
 function reply_click(clicked_id)
 {
     newSample = (clicked_id);
-    alert(newSample);
+    // alert(newSample);
 }
 
 
@@ -135,7 +135,7 @@ function reply_click(clicked_id)
 
 
 
-<h2 class="title">Your Rack</h2>
+<h2 class="title">Your Sample Rack</h2>
 
 <!-- first sample Holder -->
   <div id="holder1" onclick="changeSrc1()" class="animated fadeIn">
@@ -216,9 +216,11 @@ function reply_click(clicked_id)
 
 <h2 class="title">Available Samples</h2>
 
+<div class="container">
+
+<div class="sounds_holder">
+<% @kicks.each do |k| %>
 	<div class="sample_repo animated fadeIn">
-    KICKS
-    <% @kicks.each do |k| %>
     <div id="sample<%= k.id %>" onclick="reply_click(this.innerHTML); playNew<%= k.id %>();">
   		<audio id="sa<%= k.id %>" class="push" src="<%= k.audiofile.url %>">
   		</audio>
@@ -228,12 +230,14 @@ function reply_click(clicked_id)
   			<h4><%= k.name %></h4>
   		</div>
     </div>
-    <% end %>
 	</div>
+<% end %>
+</div>
 
-    <div class="sample_repo animated fadeIn">
-      SNARES
-    <% @snares.each do |s| %>
+<div class="sounds_holder">
+<% @snares.each do |s| %>
+  <div class="sample_repo animated fadeIn">
+ 
     <div id="sample<%= s.id %>" onclick="reply_click(this.innerHTML); playNew<%= s.id %>();">
       <audio id="sa<%= s.id %>" class="push" src="<%= s.audiofile.url %>">
       </audio>
@@ -243,12 +247,13 @@ function reply_click(clicked_id)
         <h4><%= s.name %></h4>
       </div>
     </div>
-    <% end %>
   </div>
+<% end %>
+</div>
 
+<div class="sounds_holder">
+<% @hihatsclosed.each do |hhc| %>
   <div class="sample_repo animated fadeIn">
-      HH CLOSED
-    <% @hihatsclosed.each do |hhc| %>
     <div id="sample<%= hhc.id %>" onclick="reply_click(this.innerHTML); playNew<%= hhc.id %>();">
       <audio id="sa<%= hhc.id %>" class="push" src="<%= hhc.audiofile.url %>">
       </audio>
@@ -258,27 +263,28 @@ function reply_click(clicked_id)
         <h4><%= hhc.name %></h4>
       </div>
     </div>
-    <% end %>
   </div>
+<% end %>
+</div>
 
+<div class="sounds_holder">
+<% @hihatsopen.each do |hho| %>
   <div class="sample_repo animated fadeIn">
-      HH OPEN
-    <% @hihatsopen.each do |hho| %>
     <div id="sample<%= hho.id %>" onclick="reply_click(this.innerHTML); playNew<%= hho.id %>();">
       <audio id="sa<%= hho.id %>" class="push" src="<%= hho.audiofile.url %>">
       </audio>
-
       <div class="pad">
         <h3><%= hho.category %><br></h3>
         <h4><%= hho.name %></h4>
       </div>
     </div>
-    <% end %>
   </div>
+<% end %>
+</div>
 
-<div class="sample_repo animated fadeIn">
-    CLAPS
-    <% @claps.each do |cl| %>
+<div class="sounds_holder">
+<% @claps.each do |cl| %>
+  <div class="sample_repo animated fadeIn">
     <div id="sample<%= cl.id %>" onclick="reply_click(this.innerHTML); playNew<%= cl.id %>();">
       <audio id="sa<%= cl.id %>" class="push" src="<%= cl.audiofile.url %>">
       </audio>
@@ -288,12 +294,13 @@ function reply_click(clicked_id)
         <h4><%= cl.name %></h4>
       </div>
     </div>
-    <% end %>
   </div>
+<% end %>
+</div>
 
-    <div class="sample_repo animated fadeIn">
-      CYMBALS
-    <% @cymbals.each do |cy| %>
+<div class="sounds_holder">
+<% @cymbals.each do |cy| %>
+  <div class="sample_repo animated fadeIn">
     <div id="sample<%= cy.id %>" onclick="reply_click(this.innerHTML); playNew<%= cy.id %>();">
       <audio id="sa<%= cy.id %>" class="push" src="<%= cy.audiofile.url %>">
       </audio>
@@ -303,12 +310,13 @@ function reply_click(clicked_id)
         <h4><%= cy.name %></h4>
       </div>
     </div>
-    <% end %>
   </div>
-
+<% end %>
+</div>
+   
+<div class="sounds_holder">
+<% @fx.each do |fx| %>
   <div class="sample_repo animated fadeIn">
-      FX
-    <% @fx.each do |fx| %>
     <div id="sample<%= fx.id %>" onclick="reply_click(this.innerHTML); playNew<%= fx.id %>();">
       <audio id="sa<%= fx.id %>" class="push" src="<%= fx.audiofile.url %>">
       </audio>
@@ -318,12 +326,13 @@ function reply_click(clicked_id)
         <h4><%= fx.name %></h4>
       </div>
     </div>
-    <% end %>
-  </div>
+  </div><br>
+<% end %>
+</div>
 
+<div class="sounds_holder">
+<% @vocals.each do |v| %>
   <div class="sample_repo animated fadeIn">
-      VOCALS
-    <% @vocals.each do |v| %>
     <div id="sample<%= v.id %>" onclick="reply_click(this.innerHTML); playNew<%= v.id %>();">
       <audio id="sa<%= v.id %>" class="push" src="<%= v.audiofile.url %>">
       </audio>
@@ -333,9 +342,12 @@ function reply_click(clicked_id)
         <h4><%= v.name %></h4>
       </div>
     </div>
-    <% end %>
   </div>
+<% end %>
+</div>
 
+
+</div>
 
 <!-- this section allows users to add new samples -->
 
