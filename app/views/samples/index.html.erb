@@ -1,6 +1,5 @@
 <script>
 
-
 // grab keydown code + play sample + change background color
 $(document).keypress(function(e) {
         if ( e.keyCode === 97 ) { //a
@@ -147,7 +146,7 @@ function reply_click(clicked_id)
   </div>
 <!-- second sample holder -->
   <div id="holder2" onclick="changeSrc2()" class="animated fadeIn">
-    <audio id="2" class="push" src="<%= @samples.find(2).audiofile.url %>" ></audio>
+    <audio id="2" class="push" src="<%= @samples.find(2).audiofile.url %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(2).category %><br></h3>
         <h4><%= @samples.find(2).name %></h4>
@@ -156,7 +155,7 @@ function reply_click(clicked_id)
 
   <!-- third sample Holder -->
   <div id="holder3" onclick="changeSrc3()" class="animated fadeIn">
-    <audio id="3" class="push" src="<%= @samples.find(3).audiofile.url %>" > </audio>
+    <audio id="3" class="push" src="<%= @samples.find(3).audiofile.url %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(3).category %><br></h3>
         <h4><%= @samples.find(3).name %></h4>
@@ -165,7 +164,7 @@ function reply_click(clicked_id)
 
 <!-- fourth sample holder -->
   <div id="holder4" onclick="changeSrc4()" class="animated fadeIn">
-    <audio id="4" class="push" src="<%= @samples.find(4).audiofile.url %>" ></audio>
+    <audio id="4" class="push" src="<%= @samples.find(4).audiofile.url %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(4).category %><br></h3>
         <h4><%= @samples.find(4).name %></h4>
@@ -177,7 +176,7 @@ function reply_click(clicked_id)
 
 <!-- fifth sample Holder -->
   <div id="holder5" onclick="changeSrc5()" class="animated fadeIn">
-    <audio id="5" class="push" src="<%= @samples.find(5).audiofile.url %>" > </audio>
+    <audio id="5" class="push" src="<%= @samples.find(5).audiofile.url %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(5).category %><br></h3>
         <h4><%= @samples.find(5).name %></h4>
@@ -185,7 +184,7 @@ function reply_click(clicked_id)
   </div>
 <!-- sixth sample holder -->
   <div id="holder6" onclick="changeSrc6()" class="animated fadeIn">
-    <audio id="6" class="push" src="<%= @samples.find(6).audiofile.url %>" ></audio>
+    <audio id="6" class="push" src="<%= @samples.find(6).audiofile.url %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(6).category %><br></h3>
         <h4><%= @samples.find(6).name %></h4>
@@ -194,7 +193,7 @@ function reply_click(clicked_id)
 
   <!-- seventh sample Holder -->
   <div id="holder7" onclick="changeSrc7()" class="animated fadeIn">
-    <audio id="7" class="push" src="<%= @samples.find(7).audiofile.url %>" > </audio>
+    <audio id="7" class="push" src="<%= @samples.find(7).audiofile.url %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(7).category %><br></h3>
         <h4><%= @samples.find(7).name %></h4>
@@ -203,7 +202,7 @@ function reply_click(clicked_id)
 
 <!-- eighth sample holder -->
   <div id="holder8" onclick="changeSrc8()" class="animated fadeIn">
-    <audio id="8" class="push" src="<%= @samples.find(8).audiofile.url %>" ></audio>
+    <audio id="8" class="push" src="<%= @samples.find(8).audiofile.url %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(8).category %><br></h3>
         <h4><%= @samples.find(8).name %></h4>
@@ -222,7 +221,7 @@ function reply_click(clicked_id)
 <% @kicks.each do |k| %>
 	<div class="sample_repo animated fadeIn">
     <div id="sample<%= k.id %>" onclick="reply_click(this.innerHTML); playNew<%= k.id %>();">
-  		<audio id="sa<%= k.id %>" class="push" src="<%= k.audiofile.url %>">
+  		<audio id="sa<%= k.id %>" class="push" src="<%= k.audiofile.url %>" >
   		</audio>
 
   		<div class="pad">
@@ -239,7 +238,7 @@ function reply_click(clicked_id)
   <div class="sample_repo animated fadeIn">
  
     <div id="sample<%= s.id %>" onclick="reply_click(this.innerHTML); playNew<%= s.id %>();">
-      <audio id="sa<%= s.id %>" class="push" src="<%= s.audiofile.url %>">
+      <audio id="sa<%= s.id %>" class="push" src="<%= s.audiofile.url %>" >
       </audio>
 
       <div class="pad">
@@ -255,7 +254,7 @@ function reply_click(clicked_id)
 <% @hihatsclosed.each do |hhc| %>
   <div class="sample_repo animated fadeIn">
     <div id="sample<%= hhc.id %>" onclick="reply_click(this.innerHTML); playNew<%= hhc.id %>();">
-      <audio id="sa<%= hhc.id %>" class="push" src="<%= hhc.audiofile.url %>">
+      <audio id="sa<%= hhc.id %>" class="push" src="<%= hhc.audiofile.url %>" >
       </audio>
 
       <div class="pad">
@@ -271,7 +270,7 @@ function reply_click(clicked_id)
 <% @hihatsopen.each do |hho| %>
   <div class="sample_repo animated fadeIn">
     <div id="sample<%= hho.id %>" onclick="reply_click(this.innerHTML); playNew<%= hho.id %>();">
-      <audio id="sa<%= hho.id %>" class="push" src="<%= hho.audiofile.url %>">
+      <audio id="sa<%= hho.id %>" class="push" src="<%= hho.audiofile.url %>" >
       </audio>
       <div class="pad">
         <h3><%= hho.category %><br></h3>
@@ -286,7 +285,7 @@ function reply_click(clicked_id)
 <% @claps.each do |cl| %>
   <div class="sample_repo animated fadeIn">
     <div id="sample<%= cl.id %>" onclick="reply_click(this.innerHTML); playNew<%= cl.id %>();">
-      <audio id="sa<%= cl.id %>" class="push" src="<%= cl.audiofile.url %>">
+      <audio id="sa<%= cl.id %>" class="push" src="<%= cl.audiofile.url %>" >
       </audio>
 
       <div class="pad">
@@ -302,7 +301,7 @@ function reply_click(clicked_id)
 <% @cymbals.each do |cy| %>
   <div class="sample_repo animated fadeIn">
     <div id="sample<%= cy.id %>" onclick="reply_click(this.innerHTML); playNew<%= cy.id %>();">
-      <audio id="sa<%= cy.id %>" class="push" src="<%= cy.audiofile.url %>">
+      <audio id="sa<%= cy.id %>" class="push" src="<%= cy.audiofile.url %>" >
       </audio>
 
       <div class="pad">
@@ -318,7 +317,7 @@ function reply_click(clicked_id)
 <% @fx.each do |fx| %>
   <div class="sample_repo animated fadeIn">
     <div id="sample<%= fx.id %>" onclick="reply_click(this.innerHTML); playNew<%= fx.id %>();">
-      <audio id="sa<%= fx.id %>" class="push" src="<%= fx.audiofile.url %>">
+      <audio id="sa<%= fx.id %>" class="push" src="<%= fx.audiofile.url %>" >
       </audio>
 
       <div class="pad">
@@ -334,7 +333,7 @@ function reply_click(clicked_id)
 <% @vocals.each do |v| %>
   <div class="sample_repo animated fadeIn">
     <div id="sample<%= v.id %>" onclick="reply_click(this.innerHTML); playNew<%= v.id %>();">
-      <audio id="sa<%= v.id %>" class="push" src="<%= v.audiofile.url %>">
+      <audio id="sa<%= v.id %>" class="push" src="<%= v.audiofile.url %>" >
       </audio>
 
       <div class="pad">
