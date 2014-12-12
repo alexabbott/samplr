@@ -203,28 +203,30 @@ function startTone( frequency )
   amp.gain.cancelScheduledValues(now);
   // Anchor beginning of ramp at current value.
   amp.gain.setValueAtTime(amp.gain.value, now);
-  amp.gain.linearRampToValueAtTime(0.9, context.currentTime + 0.01);
+  amp.gain.linearRampToValueAtTime(0.5, context.currentTime + 0.01);
   amp.gain.linearRampToValueAtTime(0.0, context.currentTime + 0.11);
 }
 
 // init once the page has finished loading.
 window.onload = initAudio;
 var $x = 1000;
-var $newbpm = 70;
+var $newbpm = 60;
 var $t;
 
 function beep() {
-  startTone(800);
+  startTone(500);
 }
 
 $('.stop').click(function() {
   clearInterval($t);
+  $('.start').removeClass("clicked");
 });
 
 $('.start').click(function() {
   clearInterval($t);
-  $newbpm = 1000/(Math.round($('input').val()/70));
+  $newbpm = 1000/$('input').val()*60;
   $t=setInterval(beep,$newbpm);
+  $('.start').addClass("clicked");
 });
 //@ sourceURL=pen.js
 </script>

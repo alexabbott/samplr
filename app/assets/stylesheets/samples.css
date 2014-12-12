@@ -57,6 +57,11 @@ input[type=number]{
 	color: #fff;
 }
 
+.clicked {
+	background: #000;
+	color: #fff;
+}
+
 p {
   clear: both;
 }
@@ -194,7 +199,7 @@ select {
 .x_button {
 	position: absolute;
 	font-size: 30px;
-	top: -25px;
+	top: 0px;
 	right: 15px;
 	font-family: 'Lato', arial, sans-serif;
 	cursor: pointer;
