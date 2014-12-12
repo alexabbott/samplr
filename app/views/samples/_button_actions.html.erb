@@ -1,0 +1,25 @@
+<script>
+
+// this shows the "Add sample" div 
+function showAddSample(){
+    document.getElementsByClassName("add_sample")[0].style.display= "block";
+    document.getElementsByClassName("add_sample")[0].className= "add_sample animated fadeInDown";
+}
+
+function hideAddSample(){
+    document.getElementsByClassName("add_sample")[0].className= "add_sample animated fadeOutDown";
+}
+
+function showSampleBank(){
+  document.getElementsByClassName("sample_bank")[0].style.display= "block";
+  document.getElementsByClassName("sample_bank")[0].className= "sample_bank animated fadeInUp";
+  document.getElementsByClassName("add_button")[0].style.display= "none";
+  document.getElementById("hide_bank").style.display= "inline-block";
+}
+
+function hideSampleBank(){
+  document.getElementsByClassName("sample_bank")[0].className= "sample_bank animated fadeOutDown";
+  document.getElementsByClassName("add_button")[0].style.display= "inline-block";
+  document.getElementById("hide_bank").style.display= "none";
+}
+</script>

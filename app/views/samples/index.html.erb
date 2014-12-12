@@ -1,190 +1,24 @@
-<script>
+<!-- main javascript for playing/switching samples -->
+<%= render 'playjs' %>
 
-// grab keydown code + play sample + change background color
-$(document).keypress(function(e) {
-        if ( e.keyCode === 97 ) { //a
-            function play1(){
-                 var audio1 = document.getElementsByClassName("push")[0];
-                 audio1.pause(); 
-                 audio1.currentTime = 0; 
-                 audio1.play();
-            };
-            play1();
-        	document.getElementsByClassName("pad")[0].style.backgroundColor="white";
-        }
-        else if ( e.keyCode === 115 ) { //s
-            function play2(){
-                 var audio2 = document.getElementsByClassName("push")[1];
-                 audio2.pause(); 
-                 audio2.currentTime = 0; 
-                 audio2.play();
-            };
-            play2();
-            document.getElementsByClassName("pad")[1].style.backgroundColor="white";
-        }
-        else if ( e.keyCode === 102 ) { //f
-            function play3(){
-                 var audio3 = document.getElementsByClassName("push")[2];
-                 audio3.pause(); 
-                 audio3.currentTime = 0; 
-                 audio3.play();
-            };
-            play3();
-            document.getElementsByClassName("pad")[2].style.backgroundColor="white";
-        }
-        else if ( e.keyCode === 103 ) { //g
-            function play4(){
-                 var audio4 = document.getElementsByClassName("push")[3];
-                 audio4.pause(); 
-                 audio4.currentTime = 0; 
-                 audio4.play();
-            };
-            play4();
-            document.getElementsByClassName("pad")[3].style.backgroundColor="white";
-        }
-        else if ( e.keyCode === 118 ) { //v
-            function play5(){
-                 var audio5 = document.getElementsByClassName("push")[4];
-                 audio5.pause(); 
-                 audio5.currentTime = 0; 
-                 audio5.play();
-            };
-            play5();
-            document.getElementsByClassName("pad")[4].style.backgroundColor="white";
-        }
-        else if ( e.keyCode === 98 ) { //b
-            function play6(){
-                 var audio6 = document.getElementsByClassName("push")[5];
-                 audio6.pause(); 
-                 audio6.currentTime = 0; 
-                 audio6.play();
-            };
-            play6();
-            document.getElementsByClassName("pad")[5].style.backgroundColor="white";
-        }     
-        else if ( e.keyCode === 104 ) { //h
-            function play7(){
-                 var audio7 = document.getElementsByClassName("push")[6];
-                 audio7.pause(); 
-                 audio7.currentTime = 0; 
-                 audio7.play();
-            };
-            play7();
-            document.getElementsByClassName("pad")[6].style.backgroundColor="white";
-        } 
-        else if ( e.keyCode === 106 ) { //j
-            function play8(){
-                 var audio8 = document.getElementsByClassName("push")[7];
-                 audio8.pause(); 
-                 audio8.currentTime = 0; 
-                 audio8.play();
-            };
-            play8();
-            document.getElementsByClassName("pad")[7].style.backgroundColor="white";
-        }    
-    });
+<!--   <img src="../../assets/samplr_logo1.png" class="logo">
+ -->
+  <h2 class="title">SAMPLR</h2>
 
+<div class="samplr_container">
 
-// change background color back to normal
-
-$(document).keyup(function() {
-
-        document.getElementsByClassName("pad")[0].style.backgroundColor="black";
-        document.getElementsByClassName("pad")[1].style.backgroundColor="black";
-        document.getElementsByClassName("pad")[2].style.backgroundColor="black";
-        document.getElementsByClassName("pad")[3].style.backgroundColor="black";
-        document.getElementsByClassName("pad")[4].style.backgroundColor="black";
-        document.getElementsByClassName("pad")[5].style.backgroundColor="black";
-        document.getElementsByClassName("pad")[6].style.backgroundColor="black";
-        document.getElementsByClassName("pad")[7].style.backgroundColor="black";
-    });
-
-
-// this function grabs the new sample you want to load
-
-function reply_click(clicked_id)
-{
-    newSample = (clicked_id);
-    // alert(newSample);
-}
-
-
-// this function replaces the old sample with a new sample
-
-<% @samples.each do |s| %>
-
-  function changeSrc<%= s.id %>() {
-    document.getElementById("holder<%= s.id %>").innerHTML=newSample;
-  }
-
-// this function plays the samples in the 'Available Samples' section
-
-  function playNew<%= s.id %>(){
-                 var audio<%= s.id %> = document.getElementById("sa<%= s.id %>");
-                 audio<%= s.id %>.pause(); 
-                 audio<%= s.id %>.currentTime = 0; 
-                 audio<%= s.id %>.play();
-            };
-    playNew<%= s.id %>();
-
-
-<% end %>
-
-</script>
-
-
-
-<h2 class="title">Your Sample Rack</h2>
-
-<!-- first sample Holder -->
-  <div id="holder1" onclick="changeSrc1()" class="animated fadeIn">
-    <audio id="1" class="push" src="<%= @samples.find(1).audiofile.url %>" > </audio>
-      <div class="pad">
-        <h3><%= @samples.find(1).category %><br></h3>
-        <h4><%= @samples.find(1).name %></h4>
-      </div>
-  </div>
-<!-- second sample holder -->
-  <div id="holder2" onclick="changeSrc2()" class="animated fadeIn">
-    <audio id="2" class="push" src="<%= @samples.find(2).audiofile.url %>"  ></audio>
-      <div class="pad">
-        <h3><%= @samples.find(2).category %><br></h3>
-        <h4><%= @samples.find(2).name %></h4>
-      </div>
-  </div>
-
-  <!-- third sample Holder -->
-  <div id="holder3" onclick="changeSrc3()" class="animated fadeIn">
-    <audio id="3" class="push" src="<%= @samples.find(3).audiofile.url %>"  > </audio>
-      <div class="pad">
-        <h3><%= @samples.find(3).category %><br></h3>
-        <h4><%= @samples.find(3).name %></h4>
-      </div>
-  </div>
-
-<!-- fourth sample holder -->
-  <div id="holder4" onclick="changeSrc4()" class="animated fadeIn">
-    <audio id="4" class="push" src="<%= @samples.find(4).audiofile.url %>"  ></audio>
-      <div class="pad">
-        <h3><%= @samples.find(4).category %><br></h3>
-        <h4><%= @samples.find(4).name %></h4>
-      </div>
-  </div>
-
-  <div style="width: 100%;height: 1px;">&nbsp;</div>
-
-
-<!-- fifth sample Holder -->
-  <div id="holder5" onclick="changeSrc5()" class="animated fadeIn">
-    <audio id="5" class="push" src="<%= @samples.find(5).audiofile.url %>"  > </audio>
+  <!-- fifth sample Holder -->
+  <div id="holder5" onclick="changeSrc5();" class="holder animated fadeIn">
+    <audio id="5" class="push" src="<%= @samples.find(5).audiofile.url(:mp3) %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(5).category %><br></h3>
         <h4><%= @samples.find(5).name %></h4>
       </div>
   </div>
-<!-- sixth sample holder -->
-  <div id="holder6" onclick="changeSrc6()" class="animated fadeIn">
-    <audio id="6" class="push" src="<%= @samples.find(6).audiofile.url %>"  ></audio>
+
+  <!-- sixth sample holder -->
+  <div id="holder6" onclick="changeSrc6()" class="holder animated fadeIn">
+    <audio id="6" class="push" src="<%= @samples.find(6).audiofile.url(:mp3) %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(6).category %><br></h3>
         <h4><%= @samples.find(6).name %></h4>
@@ -192,17 +26,17 @@ function reply_click(clicked_id)
   </div>
 
   <!-- seventh sample Holder -->
-  <div id="holder7" onclick="changeSrc7()" class="animated fadeIn">
-    <audio id="7" class="push" src="<%= @samples.find(7).audiofile.url %>"  > </audio>
+  <div id="holder7" onclick="changeSrc7()" class="holder animated fadeIn">
+    <audio id="7" class="push" src="<%= @samples.find(7).audiofile.url(:mp3) %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(7).category %><br></h3>
         <h4><%= @samples.find(7).name %></h4>
       </div>
   </div>
 
-<!-- eighth sample holder -->
-  <div id="holder8" onclick="changeSrc8()" class="animated fadeIn">
-    <audio id="8" class="push" src="<%= @samples.find(8).audiofile.url %>"  ></audio>
+  <!-- eighth sample holder -->
+  <div id="holder8" onclick="changeSrc8()" class="holder animated fadeIn">
+    <audio id="8" class="push" src="<%= @samples.find(8).audiofile.url(:mp3) %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(8).category %><br></h3>
         <h4><%= @samples.find(8).name %></h4>
@@ -210,146 +44,112 @@ function reply_click(clicked_id)
   </div>
 
 
+  <div style="width: 100%;height: 1px;">&nbsp;</div>
 
-<!-- This section shows all the available samples -->
 
-<h2 class="title">Available Samples</h2>
-
-<div class="container">
-
-<div class="sounds_holder">
-<% @kicks.each do |k| %>
-	<div class="sample_repo animated fadeIn">
-    <div id="sample<%= k.id %>" onclick="reply_click(this.innerHTML); playNew<%= k.id %>();">
-  		<audio id="sa<%= k.id %>" class="push" src="<%= k.audiofile.url %>" >
-  		</audio>
-
-  		<div class="pad">
-  			<h3><%= k.category %><br></h3>
-  			<h4><%= k.name %></h4>
-  		</div>
-    </div>
-	</div>
-<% end %>
-</div>
-
-<div class="sounds_holder">
-<% @snares.each do |s| %>
-  <div class="sample_repo animated fadeIn">
- 
-    <div id="sample<%= s.id %>" onclick="reply_click(this.innerHTML); playNew<%= s.id %>();">
-      <audio id="sa<%= s.id %>" class="push" src="<%= s.audiofile.url %>" >
-      </audio>
-
+  <!-- first sample Holder -->
+  <div id="holder1" onclick="changeSrc1()" class="holder animated fadeIn">
+    <audio id="1" class="push" src="<%= @samples.find(1).audiofile.url(:mp3) %>" > </audio>
       <div class="pad">
-        <h3><%= s.category %><br></h3>
-        <h4><%= s.name %></h4>
+        <h3><%= @samples.find(1).category %><br></h3>
+        <h4><%= @samples.find(1).name %></h4>
       </div>
-    </div>
   </div>
-<% end %>
-</div>
-
-<div class="sounds_holder">
-<% @hihatsclosed.each do |hhc| %>
-  <div class="sample_repo animated fadeIn">
-    <div id="sample<%= hhc.id %>" onclick="reply_click(this.innerHTML); playNew<%= hhc.id %>();">
-      <audio id="sa<%= hhc.id %>" class="push" src="<%= hhc.audiofile.url %>" >
-      </audio>
-
+  <!-- second sample holder -->
+  <div id="holder2" onclick="changeSrc2()" class="holder animated fadeIn">
+    <audio id="2" class="push" src="<%= @samples.find(2).audiofile.url(:mp3) %>"  ></audio>
       <div class="pad">
-        <h3><%= hhc.category %><br></h3>
-        <h4><%= hhc.name %></h4>
+        <h3><%= @samples.find(2).category %><br></h3>
+        <h4><%= @samples.find(2).name %></h4>
       </div>
-    </div>
   </div>
-<% end %>
-</div>
 
-<div class="sounds_holder">
-<% @hihatsopen.each do |hho| %>
-  <div class="sample_repo animated fadeIn">
-    <div id="sample<%= hho.id %>" onclick="reply_click(this.innerHTML); playNew<%= hho.id %>();">
-      <audio id="sa<%= hho.id %>" class="push" src="<%= hho.audiofile.url %>" >
-      </audio>
+  <!-- third sample Holder -->
+  <div id="holder3" onclick="changeSrc3()" class="holder animated fadeIn">
+    <audio id="3" class="push" src="<%= @samples.find(3).audiofile.url(:mp3) %>"  > </audio>
       <div class="pad">
-        <h3><%= hho.category %><br></h3>
-        <h4><%= hho.name %></h4>
+        <h3><%= @samples.find(3).category %><br></h3>
+        <h4><%= @samples.find(3).name %></h4>
       </div>
-    </div>
   </div>
-<% end %>
-</div>
 
-<div class="sounds_holder">
-<% @claps.each do |cl| %>
-  <div class="sample_repo animated fadeIn">
-    <div id="sample<%= cl.id %>" onclick="reply_click(this.innerHTML); playNew<%= cl.id %>();">
-      <audio id="sa<%= cl.id %>" class="push" src="<%= cl.audiofile.url %>" >
-      </audio>
-
+  <!-- fourth sample holder -->
+  <div id="holder4" onclick="changeSrc4()" class="holder animated fadeIn">
+    <audio id="4" class="push" src="<%= @samples.find(4).audiofile.url(:mp3) %>"  ></audio>
       <div class="pad">
-        <h3><%= cl.category %><br></h3>
-        <h4><%= cl.name %></h4>
+        <h3><%= @samples.find(4).category %><br></h3>
+        <h4><%= @samples.find(4).name %></h4>
       </div>
-    </div>
   </div>
-<% end %>
+
 </div>
 
-<div class="sounds_holder">
-<% @cymbals.each do |cy| %>
-  <div class="sample_repo animated fadeIn">
-    <div id="sample<%= cy.id %>" onclick="reply_click(this.innerHTML); playNew<%= cy.id %>();">
-      <audio id="sa<%= cy.id %>" class="push" src="<%= cy.audiofile.url %>" >
-      </audio>
 
-      <div class="pad">
-        <h3><%= cy.category %><br></h3>
-        <h4><%= cy.name %></h4>
-      </div>
-    </div>
+
+<div class="divider"></div>
+
+<div class="metronome">
+  <div class="bpm_input"><input type="number" name="bpm" value="70" /> bpm</div>
+
+  <div class="on_off">
+    <div class="start btn">On</div>
+    <div class="stop btn">Off</div>
   </div>
-<% end %>
-</div>
-   
-<div class="sounds_holder">
-<% @fx.each do |fx| %>
-  <div class="sample_repo animated fadeIn">
-    <div id="sample<%= fx.id %>" onclick="reply_click(this.innerHTML); playNew<%= fx.id %>();">
-      <audio id="sa<%= fx.id %>" class="push" src="<%= fx.audiofile.url %>" >
-      </audio>
-
-      <div class="pad">
-        <h3><%= fx.category %><br></h3>
-        <h4><%= fx.name %></h4>
-      </div>
-    </div>
-  </div><br>
-<% end %>
-</div>
-
-<div class="sounds_holder">
-<% @vocals.each do |v| %>
-  <div class="sample_repo animated fadeIn">
-    <div id="sample<%= v.id %>" onclick="reply_click(this.innerHTML); playNew<%= v.id %>();">
-      <audio id="sa<%= v.id %>" class="push" src="<%= v.audiofile.url %>" >
-      </audio>
-
-      <div class="pad">
-        <h3><%= v.category %><br></h3>
-        <h4><%= v.name %></h4>
-      </div>
-    </div>
-  </div>
-<% end %>
-</div>
-
 
 </div>
+
+<div class="divider"></div>
+
+
+<!-- button to show sample bank -->
+<div class="add_button" onclick="showSampleBank()">
+  Browse Sample Bank
+</div>
+
+<!-- button to hide sample bank (originally hidden) -->
+<div class="add_button" id="hide_bank" onclick="hideSampleBank()">
+  Hide Sample Bank
+</div>
+
+<!-- button to show "Upload New Sample" dialog -->
+<div class="add_button" onclick="showAddSample()">
+  Upload New Sample
+</div>
+
+<div class="divider"></div>
+
 
 <!-- this section allows users to add new samples -->
+<div class="add_sample animated fadeInDown">
+<%= render 'new_sample'%>
+</div>
 
-<%= render 'new_sample' %>
+<!-- This section shows all the available samples -->
+<div class="sample_bank animated fadeInUp">
+<%= render 'samplebank' %>
+</div>
+
+<!--
+<div id="volume"></div>
+
+<script>
+  $("#volume").slider({
+    min: 0,
+    max: 100,
+    value: 100,
+    range: "min",
+    animate: true,
+    slide: function(event, ui) {
+      setVolume((ui.value) / 100);
+    }
+  });
+</script>
+-->
+
+<!-- javascript for metronome -->
+<%= render 'metronomejs' %>
+
+<!-- show/hide javascript for buttons -->
+<%= render 'button_actions' %>
 
 

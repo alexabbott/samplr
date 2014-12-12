@@ -6,8 +6,11 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-#Add factory girl
+# Add factory girl
 gem 'factory_girl_rails'
+
+# convert wav files to mp3
+gem 'paperclip-wav-mp3', '~> 0.0'
 
 # user paperclip to upload new samples
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"

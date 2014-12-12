@@ -1,20 +1,84 @@
-@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+@import url('http://fonts.googleapis.com/css?family=Lato');
 
 body {
 	width: 100%;
-	height: 100%;
-	font-family: 'Open Sans', Arial, sans-serif;
+	font-family: 'Lato', Arial, sans-serif;
 	text-align: center;
+	background-color: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+input[type=number]{
+    width: 40px;
+}
+
+.bpm_input {
+	display: inline-block;
+	width: 50%;
+	float: left;
+	padding-top: 18px;
+}
+
+.on_off {
+	margin: 0 auto;
+	text-align:center;
+	display: inline-block;
+	width:50%;
+	float:right;
+}
+
+.metronome {
+	width: 250px;
+	margin: 0 auto;
+	display: block;
+	height: 50px;
+}
+
+.btn {
+  border-radius: 5px;
+  display: inline-block;
+  background: #fff;
+  clear: none;
+  color: #000;
+  padding: 4px 8px;
+  margin: 15px 4px 0 4px;
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.stop {
+  background: #fff;
+  color: #000;
+}
+
+.btn:hover {
+	background: #000;
+	color: #fff;
+}
+
+p {
+  clear: both;
 }
 
 .title {
 	text-align: center;
+	font-size: 42px;
+	font-weight: normal;
+	padding: 20px;
+	margin: 0;
+}
+
+.logo {
+	width: 300px; 
+	margin: 20px auto 20px auto; 
+	display: block;
 }
 
 .pad {
 	color: lightgray;
-	width: 100px;
-	height: 100px;
+	width: 110px;
+	height: 110px;
 	background-color: #000;
 	box-shadow: 0px 0px 15px ;
 	padding: 5px;
@@ -23,10 +87,11 @@ body {
 	margin: 2px auto;
 	display: inline-block;
 	border-radius: 4px;
+	cursor: pointer;
 }
 
 .sounds_holder {
-	width: 110px;
+	width: 120px;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -36,24 +101,59 @@ h4 {
 	font-weight: normal;
 }
 
-.cross {
-	position: relative;
-	top: -32px;
-	font-weight: bold;
-	font-size: 64px;
-	transition: color 0.5s ease;
+/*.samplr_container {
+	width: 550px;
+	padding: 10px 0 40px 0;
+	border: 2px solid black;
+	margin: 20px auto 0 auto;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0px 0px 20px #aaaaaa;
+}*/
+
+#hide_bank {
+	display: none;
 }
 
-.cross:hover {
-	color: green;
+.divider {
+	width: 100%;
+	height: 10px;
 }
 
 .submit {
-	margin-top: 20px;
+	margin-top: 30px;
+}
+
+.submit_button {
+	font-size: 16px;
+	font-family: 'Lato', arial, sans-serif;
+	width: 180px;
+	height: 50px;
+	line-height: 40px;
+	text-align: center;
+	color: #000;
+	cursor: pointer;
+	background-color: #fff;
+	border: 2px solid #000;
+	border-radius: 4px;
+	-webkit-transition: width .1s, height .1s, background-color .4s;
+	transition: width .1s, height .1s, background-color .4s;
+}
+
+.submit_button:hover {
+	color: #fff;
+	background-color: #000;
+	width: 183px;
+	height: 52px;
 }
 
 .sample_name {
 	margin-top: 20px;
+	font-size: 24px;
+}
+
+.sample_upload {
+	font-size: 24px;
 }
 
 .sample_url {
@@ -62,45 +162,83 @@ h4 {
 
 .sample_category {
 	margin-top: 20px;
+	font-size: 24px;
 }
 
 .sample_repo {
 	display: inline-block;
 }
 
+.sample_bank {
+	display: none;
+	margin-bottom: 40px;
+}
+
 .upload_field {
-	margin-left: 20px;
+	margin: 10px 0 0 70px;
+	padding-left: 60px;
 	font-weight: bold;
+	font-size: 16px;
 }
 
-#holder1 {
+input[type="text"] {
+	font-size: 14px;
+	font-family: 'Lato', arial, sans-serif;
+}
+
+select {
+	font-size: 14px;
+	font-family: 'Lato', arial, sans-serif;
+}
+
+.x_button {
+	position: absolute;
+	font-size: 30px;
+	top: -25px;
+	right: 15px;
+	font-family: 'Lato', arial, sans-serif;
+	cursor: pointer;
+}
+
+.x_button:hover {
+	color: #f1f1f1;
+}
+
+.add_sample {
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	padding: 10px 0 40px 0;
+	position: absolute;
+	top: 0px;
+	background: rgba(255,255,255,0.98);
+}
+
+.add_button {
+	width: 200px;
+	height: 50px;
+	background: #fff;
+	border: 2px solid #000;
+	color: #000;
+	text-align: center;
+	margin: 20px auto 0px 10px;
+	line-height: 50px;
+	border-radius: 4px;
 	display: inline-block;
+	box-shadow: 0px 0px 10px #aaaaaa;
+	-webkit-transition: width .1s, height .1s, background-color .4s;
+	transition: width .1s, height .1s, background-color .4s;
+	cursor: pointer;
 }
 
-#holder2 {
-	display: inline-block;
+.add_button:hover {
+	color: #fff;
+	background: #000;
+	width: 205px;
+	height: 53px;
 }
 
-#holder3 {
-	display: inline-block;
-}
-
-#holder4 {
-	display: inline-block;
-}
-
-#holder5 {
-	display: inline-block;
-}
-
-#holder6 {
-	display: inline-block;
-}
-
-#holder7 {
-	display: inline-block;
-}
-
-#holder8 {
+.holder {
 	display: inline-block;
 }

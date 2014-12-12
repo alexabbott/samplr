@@ -1,33 +1,47 @@
-<!-- this section allows users to add new samples -->
+<div style="position:relative;">
 
-<h2 class="title">Add a New Sample</h2>
+	<div class="x_button" onclick="hideAddSample()">x</div>
 
-<%= form_for @sample do |f| %>
+	<!-- this section allows users to add new samples -->
 
-<div class="field sample_name">
-  Sample <%= f.label :name %><br>
-  <%= f.text_field :name, :placeholder => "Name of new audio sample", :size => 50 %>
+	<h2 class="title">Add a New Sample</h2>
+
+	<%= form_for @sample do |f| %>
+
+	<div class="field sample_name">
+	  Sample <%= f.label :name %><br>
+	  <%= f.text_field :name, :placeholder => "Name of new audio sample", :size => 40, :class => ":name_field" %>
+	</div>
+	<br>
+
+	<div class="field sample_upload">
+		Record a Sample<br>
+		<iframe src="http://webaudiodemos.appspot.com/AudioRecorder/index.html" frameborder="0"></iframe>
+	</div>
+
+	<br>
+
+	<div class="field sample_upload">
+		Upload a Sample<br>
+		<%= f.file_field :audiofile, :class => "upload_field"%>
+	</div>
+
+
+	<!-- 
+	OR
+
+	<div class="field sample_url">
+	  Enter a Sample <%= f.label :url %><br>
+	  <%= f.text_field :url, :placeholder => "URL of new audio sample", :size => 50 %>
+	</div> -->
+
+	<div class="field sample_category">
+		<%= f.label :category %><br>
+	    <%= f.select :category, [['Choose a category...'],['kick'],['snare'],['clap'],['hh closed'],['hh open'],['cymbal'],['fx'],['vocal']] %>
+	</div>
+
+	<div class="actions submit">
+	  <%= f.submit "Create Sample", :class => "submit_button" %>
+	</div>
+	<% end %>
 </div>
-<br>
-<div class="field">
-	Upload a Sample<br>
-	<%= f.file_field :audiofile, :class => "upload_field"%>
-</div>
-
-<!-- 
-OR
-
-<div class="field sample_url">
-  Enter a Sample <%= f.label :url %><br>
-  <%= f.text_field :url, :placeholder => "URL of new audio sample", :size => 50 %>
-</div> -->
-
-<div class="field sample_category">
-	<%= f.label :category %><br>
-    <%= f.select :category, [['Choose a category...'],['kick'],['snare'],['clap'],['hh closed'],['hh open'],['cymbal'],['fx'],['vocal']] %>
-</div>
-
-<div class="actions submit">
-  <%= f.submit %>
-</div>
-<% end %>
