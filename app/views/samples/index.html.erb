@@ -8,7 +8,7 @@
 <div class="samplr_container">
 
   <!-- fifth sample Holder -->
-  <div id="holder5" onclick="changeSrc5();" class="holder animated fadeIn">
+  <div id="holder5" onclick="changeSrc5()" class="holder animated fadeIn">
     <audio id="5" class="push" src="<%= @samples.find(5).audiofile.url(:mp3) %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(5).category %><br></h3>
@@ -128,6 +128,15 @@
 <div class="sample_bank animated fadeInUp">
 <%= render 'samplebank' %>
 </div>
+
+  <script>
+  function playNow1(){
+    var a1 = document.getElementsByClassName("push")[0];
+    a1.pause();
+    a1.currentTime = 0;
+    a1.play();
+  }
+  </script>
 
 <!--
 <div id="volume"></div>

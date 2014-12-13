@@ -102,19 +102,101 @@ function reply_click(clicked_id)
     // alert(newSample);
 }
 
+// these functions play the sample on click and replace the old sample with a new sample
 
-// this function replaces the old sample with a new sample
+  function changeSrc5(){
+    var a = document.getElementsByClassName("push")[0];
+    a.pause();
+    a.currentTime = 0;
+    a.play();
+    document.getElementById("holder5").innerHTML=newSample;
+    a.pause();
+    a.currentTime = 0;
+    a.play();
+  }
+
+    function changeSrc6(){
+    var b = document.getElementsByClassName("push")[1];
+    b.pause();
+    b.currentTime = 0;
+    b.play();
+    document.getElementById("holder6").innerHTML=newSample;
+    b.pause();
+    b.currentTime = 0;
+    b.play();
+  }
+
+  function changeSrc7(){
+    var c = document.getElementsByClassName("push")[2];
+    c.pause();
+    c.currentTime = 0;
+    c.play();
+    document.getElementById("holder7").innerHTML=newSample;
+    c.pause();
+    c.currentTime = 0;
+    c.play();
+  }
+
+    function changeSrc8(){
+    var d = document.getElementsByClassName("push")[3];
+    d.pause();
+    d.currentTime = 0;
+    d.play();
+    document.getElementById("holder8").innerHTML=newSample;
+    d.pause();
+    d.currentTime = 0;
+    d.play();
+  }
+
+    function changeSrc1(){
+    var e = document.getElementsByClassName("push")[4];
+    e.pause();
+    e.currentTime = 0;
+    e.play();
+    document.getElementById("holder1").innerHTML=newSample;
+    e.pause();
+    e.currentTime = 0;
+    e.play();
+  }
+
+    function changeSrc2(){
+    var f = document.getElementsByClassName("push")[5];
+    f.pause();
+    f.currentTime = 0;
+    f.play();
+    document.getElementById("holder2").innerHTML=newSample;
+    f.pause();
+    f.currentTime = 0;
+    f.play();
+  }
+    function changeSrc3(){
+    var g = document.getElementsByClassName("push")[6];
+    g.pause();
+    g.currentTime = 0;
+    g.play();
+    document.getElementById("holder3").innerHTML=newSample;
+    g.pause();
+    g.currentTime = 0;
+    g.play();
+  }
+    function changeSrc4(){
+    var h = document.getElementsByClassName("push")[7];
+    h.pause();
+    h.currentTime = 0;
+    h.play();
+    document.getElementById("holder4").innerHTML=newSample;
+    h.pause();
+    h.currentTime = 0;
+    h.play();
+  }
+
 
 <% @samples.each do |s| %>
-
-  function changeSrc<%= s.id %>() {
-    document.getElementById("holder<%= s.id %>").innerHTML=newSample;
-  }
 
 // this function plays the samples in the 'Available Samples' section
 
   function playNew<%= s.id %>(){
-                 var audio<%= s.id %> = document.getElementById("<%= s.id %>");
+            var audio<%= s.id %> = document.getElementById("<%= s.id %>");
                  audio<%= s.id %>.pause(); 
                  audio<%= s.id %>.currentTime = 0; 
                  audio<%= s.id %>.play();
@@ -124,5 +206,7 @@ function reply_click(clicked_id)
 
 
 <% end %>
+
+
 
 </script>
