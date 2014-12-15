@@ -4,7 +4,7 @@ Samplr is a simple audio sampling application ideal for use in live performances
 # HOW TO USE SAMPLR #
 
 ## Playing SAMPLR ##
-1. Navigate to `http://samplr-app.herokuapp.com` to load Samplr
+1. Navigate to [http://samplr-app.herokuapp.com](http://samplr-app.herokuapp.com) to load Samplr
 2. Use the keyboard (click `Help` to see key map) or click samples with mouse to play each sample in the main **Samplr Rack**
 
 ## Choosing New Samples ##
