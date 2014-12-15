@@ -32,3 +32,4 @@ Samplr is a simple audio sampling application ideal for use in live performances
 6. Run `rake db:migrate`
 7. Run `rake db:seed` to load sample data
 8. Open the files in your favorite text editor and go wild!
+9. Run `bundle exec rspec` to run the RSpec test suite
