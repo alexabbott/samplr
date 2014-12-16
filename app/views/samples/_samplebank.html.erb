@@ -127,7 +127,7 @@
   <% @vocals.each do |v| %>
     <div class="sample_repo animated fadeIn">
       <div id="sample<%= v.id %>" onclick="reply_click(this.innerHTML); playNew<%= v.id %>();">
-        <audio id="<%= v.id %>" class="push" src="<%= v.audiofile.url(:mp3) %>" >
+        <audio id="<%= v.id %>" class="push" src="<%= v.audiofile.url %>" >
         </audio>
 
         <div class="pad">
