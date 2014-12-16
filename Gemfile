@@ -32,6 +32,9 @@ group :development, :test do
 
    #add validation-association matchers
   gem 'shoulda-matchers', require: false
+
+  #CAPYBARA SUPER STAR POWERS ADDED
+  gem 'capybara'
   
 end
 

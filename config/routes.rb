@@ -1,8 +1,12 @@
 Samplr::Application.routes.draw do
 
+ # here's the main page!
  root 'samples#index'   
 
  get 'samples/' => 'samples#index', as: :samples
+
+ # redirect all invalid urls to the root
+ get '*path' => redirect('/')
 
  #new route added in
  get 'samples/' => 'samples#index', as: :sample

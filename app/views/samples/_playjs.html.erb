@@ -86,7 +86,6 @@ $(document).keypress(function(e) {
 
 
 // change background color back to normal
-
 $(document).keyup(function() {
     for (var i = 0; i < 8; i++) {
         document.getElementsByClassName("pad")[i].style.backgroundColor="black";
@@ -95,7 +94,6 @@ $(document).keyup(function() {
 
 
 // this function grabs the new sample you want to load
-
 function reply_click(clicked_id)
 {
     newSample = (clicked_id);
@@ -103,8 +101,7 @@ function reply_click(clicked_id)
 }
 
 // these functions play the sample on click and replace the old sample with a new sample
-
-  function changeSrc5(){
+function changeSrc5(){
     var a = document.getElementsByClassName("push")[0];
     a.pause();
     a.currentTime = 0;
@@ -113,9 +110,8 @@ function reply_click(clicked_id)
     a.pause();
     a.currentTime = 0;
     a.play();
-  }
-
-    function changeSrc6(){
+}
+function changeSrc6(){
     var b = document.getElementsByClassName("push")[1];
     b.pause();
     b.currentTime = 0;
@@ -124,9 +120,8 @@ function reply_click(clicked_id)
     b.pause();
     b.currentTime = 0;
     b.play();
-  }
-
-  function changeSrc7(){
+}
+function changeSrc7(){
     var c = document.getElementsByClassName("push")[2];
     c.pause();
     c.currentTime = 0;
@@ -135,9 +130,8 @@ function reply_click(clicked_id)
     c.pause();
     c.currentTime = 0;
     c.play();
-  }
-
-    function changeSrc8(){
+}
+function changeSrc8(){
     var d = document.getElementsByClassName("push")[3];
     d.pause();
     d.currentTime = 0;
@@ -146,9 +140,8 @@ function reply_click(clicked_id)
     d.pause();
     d.currentTime = 0;
     d.play();
-  }
-
-    function changeSrc1(){
+}
+function changeSrc1(){
     var e = document.getElementsByClassName("push")[4];
     e.pause();
     e.currentTime = 0;
@@ -157,9 +150,8 @@ function reply_click(clicked_id)
     e.pause();
     e.currentTime = 0;
     e.play();
-  }
-
-    function changeSrc2(){
+}
+function changeSrc2(){
     var f = document.getElementsByClassName("push")[5];
     f.pause();
     f.currentTime = 0;
@@ -168,8 +160,8 @@ function reply_click(clicked_id)
     f.pause();
     f.currentTime = 0;
     f.play();
-  }
-    function changeSrc3(){
+}
+function changeSrc3(){
     var g = document.getElementsByClassName("push")[6];
     g.pause();
     g.currentTime = 0;
@@ -178,8 +170,8 @@ function reply_click(clicked_id)
     g.pause();
     g.currentTime = 0;
     g.play();
-  }
-    function changeSrc4(){
+}
+function changeSrc4(){
     var h = document.getElementsByClassName("push")[7];
     h.pause();
     h.currentTime = 0;
@@ -188,13 +180,11 @@ function reply_click(clicked_id)
     h.pause();
     h.currentTime = 0;
     h.play();
-  }
+}
 
-
-<% @samples.each do |s| %>
 
 // this function plays the samples in the 'Available Samples' section
-
+<% @samples.each do |s| %>
   function playNew<%= s.id %>(){
             var audio<%= s.id %> = document.getElementById("<%= s.id %>");
                  audio<%= s.id %>.pause(); 
@@ -202,11 +192,6 @@ function reply_click(clicked_id)
                  audio<%= s.id %>.play();
             };
     playNew<%= s.id %>();
-
-
-
 <% end %>
-
-
 
 </script>

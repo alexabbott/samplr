@@ -6,10 +6,12 @@ function showAddSample(){
     document.getElementsByClassName("add_sample")[0].className= "add_sample animated fadeInDown";
 }
 
+// this hides the "Add Sample" div
 function hideAddSample(){
     document.getElementsByClassName("add_sample")[0].className= "add_sample animated fadeOutDown";
 }
 
+// this shows the "Sample Bank" and changes the button
 function showSampleBank(){
   document.getElementsByClassName("sample_bank")[0].style.display= "block";
   document.getElementsByClassName("sample_bank")[0].className= "sample_bank animated fadeInUp";
@@ -17,6 +19,7 @@ function showSampleBank(){
   document.getElementById("hide_bank").style.display= "inline-block";
 }
 
+// this hides the "Sample Bank" and changes the button
 function hideSampleBank(){
   document.getElementsByClassName("sample_bank")[0].className= "sample_bank animated fadeOutDown";
   document.getElementsByClassName("add_button")[0].style.display= "inline-block";

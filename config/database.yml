@@ -46,7 +46,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: samplr_test
+  database: samplr_development
   pool: 5
   username: 
   password:

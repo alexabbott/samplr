@@ -88,9 +88,13 @@
 
 <div class="divider"></div>
 
+<!-- here's the metronome widget -->
 <div class="metronome">
+
+  <!-- input bpm here -->
   <div class="bpm_input"><input type="number" name="bpm" value="60" /> bpm</div>
 
+<!-- turn metronome on and off -->
   <div class="on_off">
     <div class="start btn">On</div>
     <div class="stop btn">Off</div>
@@ -128,15 +132,6 @@
 <div class="sample_bank animated fadeInUp">
 <%= render 'samplebank' %>
 </div>
-
-  <script>
-  function playNow1(){
-    var a1 = document.getElementsByClassName("push")[0];
-    a1.pause();
-    a1.currentTime = 0;
-    a1.play();
-  }
-  </script>
 
 <!--
 <div id="volume"></div>

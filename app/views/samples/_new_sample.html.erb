@@ -1,19 +1,36 @@
 <div style="position:relative;">
 
+	<!-- hide this page when you click the "x" button in top right -->
 	<div class="x_button" onclick="hideAddSample()">x</div>
 
 	<!-- this section allows users to add new samples -->
 
 	<h2 class="title">Add a New Sample</h2>
 
+
 	<%= form_for @sample do |f| %>
 
+	<!-- error handling -->
+  <% if @sample.errors.any? %>
+    <div id="error_explanation">
+      <h2 class="center"><%= pluralize(@sample.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul class="center">
+      <% @sample.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<!-- sample name -->
 	<div class="field sample_name">
 	  Sample <%= f.label :name %><br>
 	  <%= f.text_field :name, :placeholder => "Name of new audio sample", :size => 40, :class => ":name_field" %>
 	</div>
 	<br>
 
+	<!-- record new sample -->
 	<div class="field sample_upload">
 		Record a Sample<br>
 		<div id="show">Open Audio Recorder</div>
@@ -22,6 +39,7 @@
 
 	<br>
 
+	<!-- upload sample file -->
 	<div class="field sample_upload">
 		Upload a Sample<br>
 		<%= f.file_field :audiofile, :class => "upload_field"%>
@@ -36,11 +54,14 @@
 	  <%= f.text_field :url, :placeholder => "URL of new audio sample", :size => 50 %>
 	</div> -->
 
+
+	<!-- choose a category -->
 	<div class="field sample_category">
 		<%= f.label :category %><br>
 	    <%= f.select :category, [['Choose a category...'],['kick'],['snare'],['clap'],['hh closed'],['hh open'],['cymbal'],['fx'],['vocal']] %>
 	</div>
 
+	<!-- submit button -->
 	<div class="actions submit">
 	  <%= f.submit "Create Sample", :class => "submit_button" %>
 	</div>
