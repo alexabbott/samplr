@@ -8,7 +8,7 @@ class Sample < ActiveRecord::Base
 
 	belongs_to :user
 
-	# paperclip attachment converted to mp3 and stored to dropbox
+	# paperclip attachment stored to dropbox
 	has_attached_file :audiofile,
 		:storage => :dropbox,
 	    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
