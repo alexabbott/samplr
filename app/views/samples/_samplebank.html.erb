@@ -76,7 +76,7 @@
   <% @claps.each do |cl| %>
     <div class="sample_repo animated fadeIn">
       <div id="sample<%= cl.id %>" onclick="reply_click(this.innerHTML); playNew<%= cl.id %>();">
-        <audio id="<%= cl.id %>" class="push" src="<%= cl.audiofile.url(:mp3) %>" >
+        <audio id="<%= cl.id %>" class="push" src="<%= cl.audiofile.url %>" >
         </audio>
 
         <div class="pad">
