@@ -15,7 +15,7 @@ class SamplesController < ApplicationController
 	def create
 		@sample = Sample.new(sample_params)
 		@sample.save
-		redirect_to samples_path
+		redirect_to root_path
 	end
 
 	def sample_params

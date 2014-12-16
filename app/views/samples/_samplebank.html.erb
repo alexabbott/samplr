@@ -8,7 +8,7 @@
   <% @kicks.each do |k| %>
     <div class="sample_repo animated fadeIn">
       <div id="sample<%= k.id %>" onclick="reply_click(this.innerHTML); playNew<%= k.id %>();">
-        <audio id="<%= k.id %>" class="push" src="<%= k.audiofile.url(:mp3) %>" >
+        <audio id="<%= k.id %>" class="push" src="<%= k.audiofile.url %>" >
         </audio>
 
         <div class="pad">
@@ -26,7 +26,7 @@
     <div class="sample_repo animated fadeIn">
    
       <div id="sample<%= s.id %>" onclick="reply_click(this.innerHTML); playNew<%= s.id %>();">
-        <audio id="<%= s.id %>" class="push" src="<%= s.audiofile.url(:mp3) %>" >
+        <audio id="<%= s.id %>" class="push" src="<%= s.audiofile.url %>" >
         </audio>
 
         <div class="pad">
@@ -43,7 +43,7 @@
   <% @hihatsclosed.each do |hhc| %>
     <div class="sample_repo animated fadeIn">
       <div id="sample<%= hhc.id %>" onclick="reply_click(this.innerHTML); playNew<%= hhc.id %>();">
-        <audio id="<%= hhc.id %>" class="push" src="<%= hhc.audiofile.url(:mp3) %>" >
+        <audio id="<%= hhc.id %>" class="push" src="<%= hhc.audiofile.url %>" >
         </audio>
 
         <div class="pad">
@@ -60,7 +60,7 @@
   <% @hihatsopen.each do |hho| %>
     <div class="sample_repo animated fadeIn">
       <div id="sample<%= hho.id %>" onclick="reply_click(this.innerHTML); playNew<%= hho.id %>();">
-        <audio id="<%= hho.id %>" class="push" src="<%= hho.audiofile.url(:mp3) %>" >
+        <audio id="<%= hho.id %>" class="push" src="<%= hho.audiofile.url %>" >
         </audio>
         <div class="pad">
           <h3><%= hho.category %><br></h3>
@@ -76,7 +76,7 @@
   <% @claps.each do |cl| %>
     <div class="sample_repo animated fadeIn">
       <div id="sample<%= cl.id %>" onclick="reply_click(this.innerHTML); playNew<%= cl.id %>();">
-        <audio id="<%= cl.id %>" class="push" src="<%= cl.audiofile.url(:mp3) %>" >
+        <audio id="<%= cl.id %>" class="push" src="<%= cl.audiofile.url %>" >
         </audio>
 
         <div class="pad">
@@ -93,7 +93,7 @@
   <% @cymbals.each do |cy| %>
     <div class="sample_repo animated fadeIn">
       <div id="sample<%= cy.id %>" onclick="reply_click(this.innerHTML); playNew<%= cy.id %>();">
-        <audio id="<%= cy.id %>" class="push" src="<%= cy.audiofile.url(:mp3) %>" >
+        <audio id="<%= cy.id %>" class="push" src="<%= cy.audiofile.url %>" >
         </audio>
 
         <div class="pad">
@@ -110,7 +110,7 @@
   <% @fx.each do |fx| %>
     <div class="sample_repo animated fadeIn">
       <div id="sample<%= fx.id %>" onclick="reply_click(this.innerHTML); playNew<%= fx.id %>();">
-        <audio id="<%= fx.id %>" class="push" src="<%= fx.audiofile.url(:mp3) %>" >
+        <audio id="<%= fx.id %>" class="push" src="<%= fx.audiofile.url %>" >
         </audio>
 
         <div class="pad">
