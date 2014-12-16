@@ -10,8 +10,11 @@ class Sample < ActiveRecord::Base
 
 	# paperclip attachment stored to dropbox
 	has_attached_file :audiofile,
-		:storage => :dropbox,
-	    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+	:storage => :s3,
+    :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :url =>':s3_domain_url',
+    :path => "/:id.:extension",
+    :bucket => 'freelaphotos'
 	    
 	validates_attachment_content_type :audiofile, :content_type => /.*/
 

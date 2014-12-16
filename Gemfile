@@ -18,6 +18,11 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # allows paperclip uploads to be saved to dropbox
 gem "paperclip-dropbox", ">= 1.1.7"
 
+
+gem 'aws-s3'
+
+gem 'aws-sdk', '~> 1.57.0'
+
 group :production do
 
 	#gem for heroku to handle assets 
