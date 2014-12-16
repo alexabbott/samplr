@@ -13,6 +13,41 @@ input[type=number]{
     width: 40px;
 }
 
+.ui-slider-range {
+	background: #fff;
+}
+
+.ui-slider .ui-slider-handle{
+	height: 15px;
+	width: 15px;
+    background: #fff;
+    box-shadow: 0px 0px 15px #000; 
+    border-style:none; 
+    border-radius: 100%;
+}
+
+.slider {
+	display: inline-block;
+	position: absolute;
+	bottom: 8%;
+	left: 7%;
+	width: 100px;
+	height: 5px;
+}
+
+.volume_container {
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	margin: 2px;
+	position: relative;
+}
+
+.volume {
+	margin: 0 auto;
+	display: inline-block;
+}
+
 .bpm_input {
 	display: inline-block;
 	width: 50%;
@@ -271,6 +306,10 @@ select {
 	background: #000;
 	width: 205px;
 	height: 53px;
+}
+
+.new_sample_holder {
+	z-index: 100;
 }
 
 .holder {

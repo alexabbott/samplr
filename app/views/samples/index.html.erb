@@ -8,46 +8,57 @@
 <div class="samplr_container">
 
   <!-- fifth sample Holder -->
+<div class="volume_container"> 
   <div id="holder5" onclick="changeSrc5()" class="holder animated fadeIn">
-    <audio id="5" class="push" src="<%= @samples.find(5).audiofile.url %>"  > </audio>
+    <audio id="5" class="push" src="<%= @samples.find(34).audiofile.url %>"  > </audio>
       <div class="pad">
-        <h3><%= @samples.find(5).category %><br></h3>
-        <h4><%= @samples.find(5).name %></h4>
+        <h3><%= @samples.find(34).category %><br></h3>
+        <h4><%= @samples.find(34).name %></h4>
       </div>
   </div>
+    <div id="slider1" class="slider"></div>
+</div>
 
   <!-- sixth sample holder -->
+<div class="volume_container">
   <div id="holder6" onclick="changeSrc6()" class="holder animated fadeIn">
-    <audio id="6" class="push" src="<%= @samples.find(6).audiofile.url %>"  ></audio>
+    <audio id="6" class="push" src="<%= @samples.find(37).audiofile.url %>"  ></audio>
       <div class="pad">
-        <h3><%= @samples.find(6).category %><br></h3>
-        <h4><%= @samples.find(6).name %></h4>
+        <h3><%= @samples.find(37).category %><br></h3>
+        <h4><%= @samples.find(37).name %></h4>
       </div>
   </div>
+    <div id="slider2" class="slider"></div>
+</div>
 
   <!-- seventh sample Holder -->
+<div class="volume_container">
   <div id="holder7" onclick="changeSrc7()" class="holder animated fadeIn">
-    <audio id="7" class="push" src="<%= @samples.find(7).audiofile.url %>"  > </audio>
+    <audio id="7" class="push" src="<%= @samples.find(38).audiofile.url %>"  > </audio>
       <div class="pad">
-        <h3><%= @samples.find(7).category %><br></h3>
-        <h4><%= @samples.find(7).name %></h4>
+        <h3><%= @samples.find(38).category %><br></h3>
+        <h4><%= @samples.find(38).name %></h4>
       </div>
   </div>
+    <div id="slider3" class="slider"></div>
+</div>
 
   <!-- eighth sample holder -->
+<div class="volume_container">
   <div id="holder8" onclick="changeSrc8()" class="holder animated fadeIn">
-    <audio id="8" class="push" src="<%= @samples.find(8).audiofile.url %>"  ></audio>
+    <audio id="8" class="push" src="<%= @samples.find(39).audiofile.url %>"  ></audio>
       <div class="pad">
-        <h3><%= @samples.find(8).category %><br></h3>
-        <h4><%= @samples.find(8).name %></h4>
+        <h3><%= @samples.find(39).category %><br></h3>
+        <h4><%= @samples.find(39).name %></h4>
       </div>
+    <div id="slider4" class="slider"></div>
   </div>
+</div>
 
-
-  <div style="width: 100%;height: 1px;">&nbsp;</div>
-
+  <div style="width: 100%;height: 5px;">&nbsp;</div>
 
   <!-- first sample Holder -->
+<div class="volume_container">
   <div id="holder1" onclick="changeSrc1()" class="holder animated fadeIn">
     <audio id="1" class="push" src="<%= @samples.find(1).audiofile.url %>" > </audio>
       <div class="pad">
@@ -55,7 +66,11 @@
         <h4><%= @samples.find(1).name %></h4>
       </div>
   </div>
+    <div id="slider5" class="slider"></div>
+</div>
+
   <!-- second sample holder -->
+<div class="volume_container">
   <div id="holder2" onclick="changeSrc2()" class="holder animated fadeIn">
     <audio id="2" class="push" src="<%= @samples.find(2).audiofile.url %>"  ></audio>
       <div class="pad">
@@ -63,24 +78,32 @@
         <h4><%= @samples.find(2).name %></h4>
       </div>
   </div>
+    <div id="slider6" class="slider"></div>
+</div>
 
   <!-- third sample Holder -->
+<div class="volume_container">
   <div id="holder3" onclick="changeSrc3()" class="holder animated fadeIn">
-    <audio id="3" class="push" src="<%= @samples.find(3).audiofile.url %>"  > </audio>
+    <audio id="3" class="push" src="<%= @samples.find(32).audiofile.url %>"  > </audio>
       <div class="pad">
-        <h3><%= @samples.find(3).category %><br></h3>
-        <h4><%= @samples.find(3).name %></h4>
+        <h3><%= @samples.find(32).category %><br></h3>
+        <h4><%= @samples.find(32).name %></h4>
       </div>
   </div>
+    <div id="slider7" class="slider"></div>
+</div>
 
   <!-- fourth sample holder -->
+<div class="volume_container">
   <div id="holder4" onclick="changeSrc4()" class="holder animated fadeIn">
-    <audio id="4" class="push" src="<%= @samples.find(4).audiofile.url %>"  ></audio>
+    <audio id="4" class="push" src="<%= @samples.find(33).audiofile.url %>"  ></audio>
       <div class="pad">
-        <h3><%= @samples.find(4).category %><br></h3>
-        <h4><%= @samples.find(4).name %></h4>
+        <h3><%= @samples.find(33).category %><br></h3>
+        <h4><%= @samples.find(33).name %></h4>
       </div>
   </div>
+    <div id="slider8" class="slider"></div>
+</div>
 
 </div>
 
@@ -133,27 +156,13 @@
 <%= render 'samplebank' %>
 </div>
 
-<!--
-<div id="volume"></div>
-
-<script>
-  $("#volume").slider({
-    min: 0,
-    max: 100,
-    value: 100,
-    range: "min",
-    animate: true,
-    slide: function(event, ui) {
-      setVolume((ui.value) / 100);
-    }
-  });
-</script>
--->
 
 <!-- javascript for metronome -->
 <%= render 'metronomejs' %>
 
 <!-- show/hide javascript for buttons -->
 <%= render 'button_actions' %>
+
+<%= render 'volume_controls' %>
 
 

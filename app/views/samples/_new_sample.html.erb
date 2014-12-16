@@ -1,4 +1,4 @@
-<div style="position:relative;">
+<div style="position:relative;" class="new_sample_holder">
 
 	<!-- hide this page when you click the "x" button in top right -->
 	<div class="x_button" onclick="hideAddSample()">x</div>
@@ -58,7 +58,7 @@
 	<!-- choose a category -->
 	<div class="field sample_category">
 		<%= f.label :category %><br>
-	    <%= f.select :category, [['Choose a category...'],['kick'],['snare'],['clap'],['hh closed'],['hh open'],['cymbal'],['fx'],['vocal']] %>
+	    <%= f.select :category, [['Choose a category...'],['kick'],['snare'],['clap'],['hi hat'],['cymbal'],['fx'],['vocal'],['tonal'],['bass'],['misc']] %>
 	</div>
 
 	<!-- submit button -->

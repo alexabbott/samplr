@@ -1,0 +1,92 @@
+<script>
+
+// volume controls
+$("#slider1").slider({
+    value : 75,
+    step  : 1,
+    range : 'min',
+    min   : 0,
+    max   : 100,
+    slide : function(){
+        var value = $("#slider1").slider("value");
+        document.getElementsByClassName("push")[0].volume = (value / 100);
+    }
+});
+$("#slider2").slider({
+    value : 75,
+    step  : 1,
+    range : 'min',
+    min   : 0,
+    max   : 100,
+    slide : function(){
+        var value = $("#slider2").slider("value");
+        document.getElementsByClassName("push")[1].volume = (value / 100);
+    }
+});
+$("#slider3").slider({
+    value : 75,
+    step  : 1,
+    range : 'min',
+    min   : 0,
+    max   : 100,
+    slide : function(){
+        var value = $("#slider3").slider("value");
+        document.getElementsByClassName("push")[2].volume = (value / 100);
+    }
+});
+$("#slider4").slider({
+    value : 75,
+    step  : 1,
+    range : 'min',
+    min   : 0,
+    max   : 100,
+    slide : function(){
+        var value = $("#slider4").slider("value");
+        document.getElementsByClassName("push")[3].volume = (value / 100);
+    }
+});
+$("#slider5").slider({
+    value : 75,
+    step  : 1,
+    range : 'min',
+    min   : 0,
+    max   : 100,
+    slide : function(){
+        var value = $("#slider5").slider("value");
+        document.getElementsByClassName("push")[4].volume = (value / 100);
+    }
+});
+$("#slider6").slider({
+    value : 75,
+    step  : 1,
+    range : 'min',
+    min   : 0,
+    max   : 100,
+    slide : function(){
+        var value = $("#slider6").slider("value");
+        document.getElementsByClassName("push")[5].volume = (value / 100);
+    }
+});
+$("#slider7").slider({
+    value : 75,
+    step  : 1,
+    range : 'min',
+    min   : 0,
+    max   : 100,
+    slide : function(){
+        var value = $("#slider7").slider("value");
+        document.getElementsByClassName("push")[6].volume = (value / 100);
+    }
+});
+$("#slider8").slider({
+    value : 75,
+    step  : 1,
+    range : 'min',
+    min   : 0,
+    max   : 100,
+    slide : function(){
+        var value = $("#slider8").slider("value");
+        document.getElementsByClassName("push")[7].volume = (value / 100);
+    }
+});
+</script>
