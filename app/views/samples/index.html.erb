@@ -3,11 +3,14 @@
 
 <!--   <img src="../../assets/samplr_logo1.png" class="logo" alt="logo">
  -->
-  <h2 class="title">SAMPLR</h2>
+
+<div class="help_button" onclick="showHelp()"><i class="fa fa-plus-circle fa-2x"></i></div>
+
+<h2 class="title">SAMPLR</h2>
 
 <div class="samplr_container">
 
-  <!-- fifth sample Holder -->
+<!-- fifth sample Holder -->
 <div class="volume_container"> 
   <div id="holder5" onclick="changeSrc5()" class="holder animated fadeIn">
     <audio id="5" class="push" src="<%= @samples.find(47).audiofile.url %>"  > </audio>
@@ -96,10 +99,10 @@
   <!-- fourth sample holder -->
 <div class="volume_container">
   <div id="holder4" onclick="changeSrc4()" class="holder animated fadeIn">
-    <audio id="4" class="push" src="<%= @samples.find(61).audiofile.url %>"  ></audio>
+    <audio id="4" class="push" src="<%= @samples.find(66).audiofile.url %>"  ></audio>
       <div class="pad">
-        <h3><%= @samples.find(61).category %><br></h3>
-        <h4><%= @samples.find(61).name %></h4>
+        <h3><%= @samples.find(66).category %><br></h3>
+        <h4><%= @samples.find(66).name %></h4>
       </div>
   </div>
     <div id="slider8" class="slider"></div>
@@ -146,6 +149,11 @@
 <div class="divider"></div>
 
 
+<!-- This section shows the help view -->
+<div class="help_container animated fadeInUp">
+<%= render 'help' %>
+</div>
+
 <!-- this section allows users to add new samples -->
 <div class="add_sample animated fadeInDown">
 <%= render 'new_sample'%>
@@ -155,6 +163,7 @@
 <div class="sample_bank animated fadeInUp">
 <%= render 'samplebank' %>
 </div>
+
 
 
 <!-- javascript for metronome -->

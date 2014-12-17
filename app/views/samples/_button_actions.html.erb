@@ -8,7 +8,7 @@ function showAddSample(){
 
 // this hides the "Add Sample" div
 function hideAddSample(){
-    document.getElementsByClassName("add_sample")[0].className= "add_sample animated fadeOutDown";
+    document.getElementsByClassName("add_sample")[0].className= "add_sample animated fadeOutUp";
 }
 
 // this shows the "Sample Bank" and changes the button
@@ -24,5 +24,16 @@ function hideSampleBank(){
   document.getElementsByClassName("sample_bank")[0].className= "sample_bank animated fadeOutDown";
   document.getElementsByClassName("add_button")[0].style.display= "inline-block";
   document.getElementById("hide_bank").style.display= "none";
+}
+
+// this shows the "Help" div 
+function showHelp(){
+    document.getElementsByClassName("help_container")[0].style.display= "block";
+    document.getElementsByClassName("help_container")[0].className= "help_container animated fadeInDown";
+}
+
+// this hides the "Help" div
+function hideHelp(){
+    document.getElementsByClassName("help_container")[0].className= "help_container animated fadeOutUp";
 }
 </script>

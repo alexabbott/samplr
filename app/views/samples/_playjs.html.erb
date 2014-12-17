@@ -2,7 +2,7 @@
 
 // grab keydown code + play sample + change background color
 $(document).keypress(function(e) {
-        if ( e.keyCode === 97 ) { //a
+        if ( e.keyCode === 115 ) { //s
             function play1(){
                  var audio1 = document.getElementsByClassName("push")[0];
                  audio1.pause(); 
@@ -12,7 +12,7 @@ $(document).keypress(function(e) {
             play1();
         	document.getElementsByClassName("pad")[0].style.backgroundColor="white";
         }
-        else if ( e.keyCode === 115 ) { //s
+        else if ( e.keyCode === 100 ) { //d
             function play2(){
                  var audio2 = document.getElementsByClassName("push")[1];
                  audio2.pause(); 
@@ -22,7 +22,7 @@ $(document).keypress(function(e) {
             play2();
             document.getElementsByClassName("pad")[1].style.backgroundColor="white";
         }
-        else if ( e.keyCode === 100 ) { //d
+        else if ( e.keyCode === 102 ) { //f
             function play3(){
                  var audio3 = document.getElementsByClassName("push")[2];
                  audio3.pause(); 
@@ -32,7 +32,7 @@ $(document).keypress(function(e) {
             play3();
             document.getElementsByClassName("pad")[2].style.backgroundColor="white";
         }
-        else if ( e.keyCode === 102 ) { //f
+        else if ( e.keyCode === 103 ) { //g
             function play4(){
                  var audio4 = document.getElementsByClassName("push")[3];
                  audio4.pause(); 
