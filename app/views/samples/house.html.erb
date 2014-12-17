@@ -10,17 +10,13 @@
 
 <div class="samplr_container">
 
-<div class="kit_menu">
-  <a href="#" data-dropdown="#dropdown-1">Sample Kit &nbsp; <i class="fa fa-caret-down"></i></a>
-</div>
-
 <!-- fifth sample Holder -->
 <div class="volume_container"> 
   <div id="holder5" onclick="changeSrc5()" class="holder animated fadeIn">
-    <audio id="5" class="push" src="<%= @samples.find(47).audiofile.url %>"  > </audio>
+    <audio id="5" class="push" src="<%= @samples.find(72).audiofile.url %>"  > </audio>
       <div class="pad">
-        <h3><%= @samples.find(47).category %><br></h3>
-        <h4><%= @samples.find(47).name %></h4>
+        <h3><%= @samples.find(72).category %><br></h3>
+        <h4><%= @samples.find(72).name %></h4>
       </div>
   </div>
     <div id="slider1" class="slider"></div>
@@ -29,10 +25,10 @@
   <!-- sixth sample holder -->
 <div class="volume_container">
   <div id="holder6" onclick="changeSrc6()" class="holder animated fadeIn">
-    <audio id="6" class="push" src="<%= @samples.find(62).audiofile.url %>"  ></audio>
+    <audio id="6" class="push" src="<%= @samples.find(73).audiofile.url %>"  ></audio>
       <div class="pad">
-        <h3><%= @samples.find(62).category %><br></h3>
-        <h4><%= @samples.find(62).name %></h4>
+        <h3><%= @samples.find(73).category %><br></h3>
+        <h4><%= @samples.find(73).name %></h4>
       </div>
   </div>
     <div id="slider2" class="slider"></div>
@@ -41,10 +37,10 @@
   <!-- seventh sample Holder -->
 <div class="volume_container">
   <div id="holder7" onclick="changeSrc7()" class="holder animated fadeIn">
-    <audio id="7" class="push" src="<%= @samples.find(45).audiofile.url %>"  > </audio>
+    <audio id="7" class="push" src="<%= @samples.find(74).audiofile.url %>"  > </audio>
       <div class="pad">
-        <h3><%= @samples.find(45).category %><br></h3>
-        <h4><%= @samples.find(45).name %></h4>
+        <h3><%= @samples.find(74).category %><br></h3>
+        <h4><%= @samples.find(74).name %></h4>
       </div>
   </div>
     <div id="slider3" class="slider"></div>
@@ -53,10 +49,10 @@
   <!-- eighth sample holder -->
 <div class="volume_container">
   <div id="holder8" onclick="changeSrc8()" class="holder animated fadeIn">
-    <audio id="8" class="push" src="<%= @samples.find(46).audiofile.url %>"  ></audio>
+    <audio id="8" class="push" src="<%= @samples.find(75).audiofile.url %>"  ></audio>
       <div class="pad">
-        <h3><%= @samples.find(46).category %><br></h3>
-        <h4><%= @samples.find(46).name %></h4>
+        <h3><%= @samples.find(75).category %><br></h3>
+        <h4><%= @samples.find(75).name %></h4>
       </div>
   </div>
       <div id="slider4" class="slider"></div>
@@ -91,10 +87,10 @@
   <!-- third sample Holder -->
 <div class="volume_container">
   <div id="holder3" onclick="changeSrc3()" class="holder animated fadeIn">
-    <audio id="3" class="push" src="<%= @samples.find(51).audiofile.url %>"  > </audio>
+    <audio id="3" class="push" src="<%= @samples.find(67).audiofile.url %>"  > </audio>
       <div class="pad">
-        <h3><%= @samples.find(51).category %><br></h3>
-        <h4><%= @samples.find(51).name %></h4>
+        <h3><%= @samples.find(67).category %><br></h3>
+        <h4><%= @samples.find(67).name %></h4>
       </div>
   </div>
     <div id="slider7" class="slider"></div>
@@ -103,10 +99,10 @@
   <!-- fourth sample holder -->
 <div class="volume_container">
   <div id="holder4" onclick="changeSrc4()" class="holder animated fadeIn">
-    <audio id="4" class="push" src="<%= @samples.find(66).audiofile.url %>"  ></audio>
+    <audio id="4" class="push" src="<%= @samples.find(63).audiofile.url %>"  ></audio>
       <div class="pad">
-        <h3><%= @samples.find(66).category %><br></h3>
-        <h4><%= @samples.find(66).name %></h4>
+        <h3><%= @samples.find(63).category %><br></h3>
+        <h4><%= @samples.find(63).name %></h4>
       </div>
   </div>
     <div id="slider8" class="slider"></div>
@@ -177,14 +173,3 @@
 <%= render 'button_actions' %>
 
 <%= render 'volume_controls' %>
-
-<div id="dropdown-1" class="dropdown dropdown-tip">
-    <ul class="dropdown-menu">
-        <li><a href="/">Sample Kit</a></li>
-        <li><a href="#2">Dubstep Kit</a></li>
-        <li><a href="/trap">Trap Kit</a></li>
-        <li><a href="/house">House Kit</a></li>
-        <li><a href="#5">Daft Punk Kit</a></li>
-        <li><a href="#5">Country Kit</a></li>
-    </ul>
-</div>

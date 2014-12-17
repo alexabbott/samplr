@@ -5,6 +5,10 @@ Samplr::Application.routes.draw do
 
  get 'samples/' => 'samples#index', as: :samples
 
+ get 'trap/' => 'samples#trap', as: :trap
+
+ get 'house/' => 'samples#house', as: :house
+
  # redirect all invalid urls to the root
  get '*path' => redirect('/')
 
