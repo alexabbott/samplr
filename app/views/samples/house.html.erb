@@ -1,13 +1,6 @@
 <!-- main javascript for playing/switching samples -->
 <%= render 'playjs' %>
 
-<!--   <img src="../../assets/samplr_logo1.png" class="logo" alt="logo">
- -->
-
-<div class="help_button" onclick="showHelp()"><i class="fa fa-plus-circle fa-2x"></i></div>
-
-<h2 class="title">SAMPLR</h2>
-
 <div class="samplr_container">
 
 <!-- fifth sample Holder -->
@@ -110,66 +103,3 @@
 
 </div>
 
-
-
-<div class="divider"></div>
-
-<!-- here's the metronome widget -->
-<div class="metronome">
-
-  <!-- input bpm here -->
-  <div class="bpm_input"><input type="number" name="bpm" value="60" /> bpm</div>
-
-<!-- turn metronome on and off -->
-  <div class="on_off">
-    <div class="start btn">On</div>
-    <div class="stop btn">Off</div>
-  </div>
-
-</div>
-
-<div class="divider" id="#divider"></div>
-
-
-<!-- button to show sample bank -->
-<div class="add_button" id="samplebank_button" onclick="showSampleBank()">
-  Browse Sample Bank
-</div>
-
-<!-- button to hide sample bank (originally hidden) -->
-<div class="add_button" id="hide_bank" onclick="hideSampleBank()">
-  Hide Sample Bank
-</div>
-
-<!-- button to show "Upload New Sample" dialog -->
-<div class="add_button" onclick="showAddSample()">
-  Upload New Sample
-</div>
-
-<div class="divider"></div>
-
-
-<!-- This section shows the help view -->
-<div class="help_container animated fadeInUp">
-<%= render 'help' %>
-</div>
-
-<!-- this section allows users to add new samples -->
-<div class="add_sample animated fadeInDown">
-<%= render 'new_sample'%>
-</div>
-
-<!-- This section shows all the available samples -->
-<div class="sample_bank animated fadeInUp">
-<%= render 'samplebank' %>
-</div>
-
-
-
-<!-- javascript for metronome -->
-<%= render 'metronomejs' %>
-
-<!-- show/hide javascript for buttons -->
-<%= render 'button_actions' %>
-
-<%= render 'volume_controls' %>

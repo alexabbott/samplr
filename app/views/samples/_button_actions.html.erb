@@ -1,5 +1,16 @@
 <script>
 
+// this shows the "Kits" div 
+function showKits(){
+    document.getElementById("kit_picker").style.display= "block";
+    document.getElementById("kit_picker").className= "kits animated fadeInDown";
+}
+
+// this hides the "Kits" div
+function hideKits(){
+    document.getElementById("kit_picker").className= "kits animated fadeOutUp";
+}
+
 // this shows the "Add sample" div 
 function showAddSample(){
     document.getElementsByClassName("add_sample")[0].style.display= "block";
@@ -15,14 +26,14 @@ function hideAddSample(){
 function showSampleBank(){
   document.getElementsByClassName("sample_bank")[0].style.display= "block";
   document.getElementsByClassName("sample_bank")[0].className= "sample_bank animated fadeInUp";
-  document.getElementsByClassName("add_button")[0].style.display= "none";
+  document.getElementById("samplebank_button").style.display= "none";
   document.getElementById("hide_bank").style.display= "inline-block";
 }
 
 // this hides the "Sample Bank" and changes the button
 function hideSampleBank(){
   document.getElementsByClassName("sample_bank")[0].className= "sample_bank animated fadeOutDown";
-  document.getElementsByClassName("add_button")[0].style.display= "inline-block";
+  document.getElementById("samplebank_button").style.display= "inline-block";
   document.getElementById("hide_bank").style.display= "none";
 }
 

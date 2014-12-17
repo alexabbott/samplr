@@ -10,7 +10,91 @@
 </head>
 <body>
 
+<!-- help launcher icon -->
+<div class="help_button" onclick="showHelp()"><i class="fa fa-plus-circle fa-2x"></i></div>
+
+<!-- logo -->
+<h2 class="title">SAMPLR</h2>
+
 <%= yield %>
+
+
+
+
+<div class="divider"></div>
+
+<!-- here's the metronome widget -->
+<div class="metronome">
+  <!-- input bpm here -->
+  <div class="bpm_input"><input type="number" name="bpm" value="60" /> bpm</div>
+<!-- turn metronome on and off -->
+  <div class="on_off">
+    <div class="start btn">On</div>
+    <div class="stop btn">Off</div>
+  </div>
+</div>
+
+
+
+
+<!-- button to show kits -->
+<div class="add_button" id="kit_button" onclick="showKits()">
+  Choose A Kit
+</div>
+
+<!-- this div starts off as hidden and appears when 'choose a kit' button is clicked   -->
+  <div id="kit_picker" class="kits">
+  	<div class="x_button" onclick="hideKits()"><i class="fa fa-close"></i></div>
+	<h2 class="title">Choose A Sample Kit</h2><br>
+    <a href="/trap" class="kit_link">Trap Kit</a><br>
+    <a href="/house" class="kit_link">House Kit</a><br>
+    <a href="/dubstep" class="kit_link">Dubstep Kit</a><br>
+    <a href="/rock" class="kit_link">Rock Kit</a><br>
+    <a href="/daftpunk" class="kit_link">Daft Punk Kit</a>
+  </div>
+
+<!-- button to show sample bank -->
+<div class="add_button" id="samplebank_button" onclick="showSampleBank()">
+  Browse Sample Bank
+</div>
+
+<!-- button to hide sample bank (originally hidden) -->
+<div class="add_button" id="hide_bank" onclick="hideSampleBank()">
+  Hide Sample Bank
+</div>
+
+<!-- button to show "Upload New Sample" dialog -->
+<div class="add_button" onclick="showAddSample()">
+  Upload New Sample
+</div>
+
+<div class="divider"></div>
+
+
+<!-- This section shows the help view -->
+<div class="help_container animated fadeInUp">
+<%= render 'help' %>
+</div>
+
+<!-- this section allows users to add new samples -->
+<div class="add_sample animated fadeInDown">
+<%= render 'new_sample'%>
+</div>
+
+<!-- This section shows all the available samples -->
+<div class="sample_bank animated fadeInUp">
+<%= render 'samplebank' %>
+</div>
+
+
+
+<!-- javascript for metronome -->
+<%= render 'metronomejs' %>
+
+<!-- show/hide javascript for buttons -->
+<%= render 'button_actions' %>
+
+<%= render 'volume_controls' %>
 
 </body>
 </html>
