@@ -12,6 +12,15 @@ Samplr::Application.routes.draw do
  # house samplr rack
  get 'house/' => 'samples#house', as: :house
 
+ # daft punk samplr rack
+ get 'daftpunk/' => 'samples#daftpunk', as: :daftpunk
+
+ # dubstep samplr rack
+ get 'dubstep/' => 'samples#dubstep', as: :dubstep
+ 
+ # rock samplr rack
+ get 'rock/' => 'samples#rock', as: :rock
+ 
  # api endpoint
  get 'api/' => 'samples#api', as: :api
 
