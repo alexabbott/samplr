@@ -42,7 +42,7 @@ input[type=number]{
 	position: absolute;
 	bottom: 8%;
 	left: 7%;
-	width: 100px;
+	width: 117px;
 	height: 5px;
 }
 
@@ -141,7 +141,7 @@ p {
 	margin: 30px auto 20px auto;
 	line-height: 30px;
 	letter-spacing: 22px;
-	text-shadow: 0px 0px 15px #ffffff;
+	text-shadow: 0px 0px 15px #cccccc;
 }
 
 .title a {
