@@ -44,6 +44,10 @@ class SamplesController < ApplicationController
 		@sample = Sample.new
 	end
 
+	def api
+		render :json => Sample.all
+	end
+
 	def create
 		@sample = Sample.new(sample_params)
 		@sample.save

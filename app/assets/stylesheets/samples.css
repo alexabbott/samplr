@@ -482,7 +482,8 @@ select {
 }
 
 #help_content {
-	width: 500px;
+	width: 530px;
+	height: 100%;
 	margin: 0 auto;
 	text-align: left;
 	z-index: 100;
