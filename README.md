@@ -1,11 +1,16 @@
 # WHAT IS SAMPLR? #
-Samplr is a simple audio sampling application ideal for use in live performances and all manner of audio projects. Samplr allows users to play samples via keyboard or touchscreen interface, customize the sample rack and record + sample new samples for use in Samplr audio racks.
+Samplr is a simple audio sampling application ideal for use in live performances and all manner of audio projects. Samplr allows users to play samples via keyboard or touchscreen interface, customize the sample rack and record + sample new samples for use in Samplr audio racks
 
 # HOW TO USE SAMPLR #
 
 ## Playing SAMPLR ##
 1. Navigate to [http://samplr-app.herokuapp.com](http://samplr-app.herokuapp.com) to load Samplr
 2. Use the keyboard (click `Help` to see key map) or click samples with mouse to play each sample in the main **Samplr Rack**
+3. Use the slider on each sample to change the volume of that sample
+
+## Choose a New Sample Kit ##
+1. Click `Choose a Kit` button to open list of available kits
+2. Click the button for the kit you would like to use
 
 ## Choosing New Samples ##
 1. Click `Browse Sample Bank` button to open the full array of available samples
@@ -22,6 +27,15 @@ Samplr is a simple audio sampling application ideal for use in live performances
 6. Choose a `Category` from the dropdown list
 7. Click `Create Sample` button
 8. Find your new sample in the **Sample Bank** once page reloads
+
+## Recording New Samples ##
+1. Click `Upload New Sample` button to open the **Add Sample** window
+2. Click the `Open Audio Recorder` button
+3. Click `Allow` in the pop-up on the top of the page to allow the app to connect with your computer's microphone
+4. Click the `Microphone` button to start recording
+5. Click the `Microphone` button again to stop recording
+6. Click the `Disk` to save your recording to your local machine
+7. Follow the steps in the **How to Upload New Samples** section to add your recording to the **Sample Bank**
 
 # HOW TO DOWNLOAD & USE THE CODE #
 1. Open PostgreSQL and get it up and running
