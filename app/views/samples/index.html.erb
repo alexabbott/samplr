@@ -1,3 +1,102 @@
+<!-- touche -->
+<script>
+  /* global jQuery:true */
+(function() {
+  'use strict';
+  var isTouch = 'ontouchstart' in window || 'msmaxtouchpoints' in window.navigator;
+
+  function Touche(nodes) {
+    // Doing this allows the developer to omit the `new` keyword from their calls to Touche
+    if (!(this instanceof Touche)) {
+      return new Touche(nodes);
+    }
+
+    if (!nodes) {
+      throw new Error('No DOM elements passed into Touche');
+    }
+
+    this.nodes = nodes;
+
+    return this;
+  }
+
+  // Our own event handler
+  Touche.prototype.on = function(event, fn) {
+    var touchend, nodes = this.nodes,
+      len = nodes.length,
+      ev;
+
+    if (isTouch && event === 'click') {
+      touchend = true;
+    }
+
+    ev = function(el, event, fn) {
+      var called, once = function() {
+          if (!called && (called = true)) {
+            fn.apply(this, arguments);
+          }
+        };
+
+      el.addEventListener(event, once, false);
+
+      if (touchend) {
+        el.addEventListener('touchend', once, false);
+      }
+    };
+
+    // NodeList or just a Node?
+    if (len) {
+      while (len--) {
+        ev(nodes[len], event, fn);
+      }
+    } else {
+      ev(nodes, event, fn);
+    }
+
+    return this;
+  };
+
+  // Expose Touche
+  window.Touche = Touche;
+
+  // Has the developer used jQuery?
+  if (window.jQuery && isTouch) {
+    var originalOnMethod  = jQuery.fn.on,
+        originalOffMethod = jQuery.fn.off;
+
+    var replaceEventName = function (event) {
+      if (event.slice(0, 5) == 'click') {
+        return event.replace('click', 'touchend');
+      }
+      return event;
+    }
+
+    // Change event type and re-apply .on() method
+    jQuery.fn.on = function() {
+      // arguments[0] is the event name if provided
+      if(typeof arguments[0] === "string"){
+        arguments[0] = replaceEventName(arguments[0]);
+      }
+
+      originalOnMethod.apply(this, arguments);
+      return this;
+    };
+
+    // Change event type and re-apply .off() method
+    jQuery.fn.off = function() {
+      // arguments[0] is the event name if provided
+      if(typeof arguments[0] === "string"){
+        arguments[0] = replaceEventName(arguments[0]);
+      }
+
+      originalOffMethod.apply(this, arguments);
+      return this;
+    };
+  }
+})();
+
+</script>
+
 <!-- main javascript for playing/switching samples -->
 <%= render 'playjs' %>
 
@@ -9,7 +108,7 @@
 
 <!-- fifth sample Holder -->
 <div class="volume_container"> 
-  <div id="holder5" onclick="changeSrc5()" ontouchstart="changeSrc5()" class="holder animated fadeIn">
+  <div id="holder5" onclick="changeSrc5()" class="holder animated fadeIn">
     <audio id="5" class="push" src="<%= @samples.find(58).audiofile.url %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(58).category %><br></h3>
@@ -21,7 +120,7 @@
 
   <!-- sixth sample holder -->
 <div class="volume_container">
-  <div id="holder6" onclick="changeSrc6()" ontouchstart="changeSrc6()" class="holder animated fadeIn">
+  <div id="holder6" onclick="changeSrc6()" class="holder animated fadeIn">
     <audio id="6" class="push" src="<%= @samples.find(100).audiofile.url %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(100).category %><br></h3>
@@ -33,7 +132,7 @@
 
   <!-- seventh sample Holder -->
 <div class="volume_container">
-  <div id="holder7" onclick="changeSrc7()" ontouchstart="changeSrc7()" class="holder animated fadeIn">
+  <div id="holder7" onclick="changeSrc7()" class="holder animated fadeIn">
     <audio id="7" class="push" src="<%= @samples.find(106).audiofile.url %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(106).category %><br></h3>
@@ -45,7 +144,7 @@
 
   <!-- eighth sample holder -->
 <div class="volume_container">
-  <div id="holder8" onclick="changeSrc8()" ontouchstart="changeSrc8()" class="holder animated fadeIn">
+  <div id="holder8" onclick="changeSrc8()" class="holder animated fadeIn">
     <audio id="8" class="push" src="<%= @samples.find(107).audiofile.url %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(107).category %><br></h3>
@@ -59,7 +158,7 @@
 
   <!-- first sample Holder -->
 <div class="volume_container">
-  <div id="holder1" onclick="changeSrc1()" ontouchstart="changeSrc1()" class="holder animated fadeIn">
+  <div id="holder1" onclick="changeSrc1()" class="holder animated fadeIn">
     <audio id="1" class="push" src="<%= @samples.find(54).audiofile.url %>" > </audio>
       <div class="pad">
         <h3><%= @samples.find(54).category %><br></h3>
@@ -71,7 +170,7 @@
 
   <!-- second sample holder -->
 <div class="volume_container">
-  <div id="holder2" onclick="changeSrc2()" ontouchstart="changeSrc2()" class="holder animated fadeIn">
+  <div id="holder2" onclick="changeSrc2()" class="holder animated fadeIn">
     <audio id="2" class="push" src="<%= @samples.find(55).audiofile.url %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(55).category %><br></h3>
@@ -83,7 +182,7 @@
 
   <!-- third sample Holder -->
 <div class="volume_container">
-  <div id="holder3" onclick="changeSrc3()" ontouchstart="changeSrc3()" class="holder animated fadeIn">
+  <div id="holder3" onclick="changeSrc3()" class="holder animated fadeIn">
     <audio id="3" class="push" src="<%= @samples.find(51).audiofile.url %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(51).category %><br></h3>
@@ -95,7 +194,7 @@
 
   <!-- fourth sample holder -->
 <div class="volume_container">
-  <div id="holder4" onclick="changeSrc4()" ontouchstart="changeSrc4()" class="holder animated fadeIn">
+  <div id="holder4" onclick="changeSrc4()" class="holder animated fadeIn">
     <audio id="4" class="push" src="<%= @samples.find(66).audiofile.url %>"  ></audio>
       <div class="pad">
         <h3><%= @samples.find(66).category %><br></h3>
