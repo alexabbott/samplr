@@ -11,7 +11,7 @@
 
 <!-- fifth sample Holder -->
 <div class="volume_container"> 
-  <div id="holder5" onclick="changeSrc5()" class="holder animated fadeIn">
+  <div id="holder5" onclick="changeSrc5()" ontouchstart="changeSrc5()" class="holder animated fadeIn">
     <audio id="5" class="push" src="<%= @samples.find(58).audiofile.url %>"  > </audio>
       <div class="pad">
         <h3><%= @samples.find(58).category %><br></h3>
